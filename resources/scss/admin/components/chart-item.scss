@@ -1,0 +1,60 @@
+/*!
+ *  @company DarcFlow design [https://darcflow.com]
+ *  @author    Koroph <yjk@outlook.fr> (+225 0778329592)
+ *  @website http://koroph.site
+ *  @link      https://github.com/Koroph
+ *  @license   Apache 2.0
+ *  @Copyright (c) 2021.
+ *
+ */
+.kh-chart-item{
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+  background-color: $white;
+  border-radius: 4px;
+  padding: 8px;
+  position: relative;
+  overflow: hidden;
+  canvas{
+    width: 100%;
+  }
+  .kh_loading {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba($white, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .chat-loading-message {
+      text-align: center;
+    }
+
+    strong {
+      color: $black;
+      display: inline-block;
+      position: relative;
+
+      &:before {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 25%;
+        border-radius: 2px;
+        background-color: $primary;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        animation-name: bar-loader;
+        animation-duration: 500ms;
+        animation-direction: alternate-reverse;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+      }
+    }
+
+  }
+}
+

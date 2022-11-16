@@ -1,0 +1,65 @@
+/*!
+ *  @company DarcFlow design [https://darcflow.com]
+ *  @author    Koroph <yjk@outlook.fr> {(+225)0778329592}
+ *  @website http://koroph.site
+ *  @link      https://github.com/Koroph
+ *  @license   Apache 2.0
+ *  @Copyright (c) 2021.
+ *
+ */
+
+/*
+ *  @company DarcFlow design [https://darcflow.com]
+ *  @author    Koroph <yjk@outlook.fr> (+225 0778329592)
+ *  @website http://koroph.site
+ *  @link      https://github.com/Koroph
+ *  @license   Apache 2.0
+ *  @Copyright (c) 2021.
+ *
+ */
+
+.state-view {
+    display: inline-block;
+    color: $white;
+    font-size: 0.8rem;
+    text-align: center;
+
+    &#{'-enable'} {
+        &.primary {
+            background-color: $primary !important;
+        }
+
+        min-width: 72px;
+        background-color: $white;
+        color: $green;
+        font-weight: 600;
+        padding: 6px 18px;
+        border-radius: 2px;
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+            color: $white;
+            background-color: $green;
+        }
+    }
+
+    &#{'-disabled'} {
+        &.danger {
+            background-color: $danger !important;
+        }
+
+        min-width: 72px;
+        background-color: $white;
+        color: $warning;
+        display: inline-block;
+        padding: 6px 18px;
+        border-radius: 2px;
+        font-weight: 600;
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+            color: $white;
+            background-color: $warning;
+        }
+    }
+}

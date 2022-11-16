@@ -1,0 +1,2 @@
+
+import './admin/partial/login';

@@ -1,0 +1,304 @@
+/*!
+ *  @company DarcFlow design [https://darcflow.com]
+ *  @author    Koroph <yjk@outlook.fr> {(+225)0778329592}
+ *  @website http://koroph.site
+ *  @link      https://github.com/Koroph
+ *  @license   Apache 2.0
+ *  @Copyright (c) 2021.
+ *
+ */
+
+#index-view {
+  padding-bottom: 32px;
+
+
+  &#{'-header'} {
+
+  }
+
+  &#{'-body'} {
+    background-color: $white;
+
+    margin-top: 24px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+
+    &#{'-empty'} {
+      min-height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      h3 {
+        color: $gray-500;
+        font-size: 1.1rem;
+        span{
+          color: $primary;
+        }
+      }
+    }
+
+
+    &#{'-search'} {
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      #index-view-body-search-other {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 39px;
+        padding: 2px 4px;
+
+        .index-view-body-search-other-item {
+          margin-right: 8px;
+          &:last-child{
+            margin-right: 0;
+          }
+          h4 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            display: inline-block;
+            background-color: $gray-100;
+            padding: 8px 16px;
+            margin: 0;
+            border-radius: 2px;
+            font-weight: 700;
+
+            strong {
+              color: $success;
+            }
+          }
+          a, button {
+            box-sizing: border-box;
+            padding: 6px 12px;
+            display: inline-block;
+            background-color: $gray-200;
+            box-shadow: 1.8px 1.8px 3px rgba(0,0,0,0.18);
+            border-radius: 4px;
+            color: $primary;
+            &:hover{
+              background-color: $white;
+            }
+            span {
+              font-size: large;
+            }
+          }
+
+          button {
+            border: none;
+            span {
+
+            }
+          }
+
+          a {
+            text-decoration: none;
+            span {
+
+            }
+          }
+        }
+
+      }
+
+      #index-view-body-search-content {
+        width: 35%;
+        position: relative;
+
+        input[type="search"] {
+          width: 100%;
+          border: 2.2px solid $gray-400;
+          padding: 6px 8px;
+          border-radius: 1px;
+
+          &:focus {
+            outline: none;
+            border-color: $primary;
+          }
+        }
+
+        label {
+          position: absolute;
+          right: 5px;
+          top: 15%;
+          color: $gray-500;
+          display: inline-block;
+          padding: 6px;
+        }
+      }
+
+    }
+
+    &#{'-paginate'} {
+      padding: 8px 16px;
+      background-color: $gray-700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &#{'-state'} {
+
+        color: rgba($white, 0.8);
+
+      }
+
+      &#{'-link'} {
+        a {
+          display: inline-block;
+          padding: 6px 14px;
+          background-color: $dark;
+          border-radius: 4px;
+          color: $white;
+          text-decoration: none;
+
+          &.disabled {
+            cursor: not-allowed;
+            background-color: rgba($dark, 0.4);
+            color: rgba($white, 0.4);
+          }
+        }
+      }
+    }
+
+    #index-view-body-table-bottom {
+      padding: 8px;
+      background-color: $gray-200;
+    }
+
+    table {
+      width: 100%;
+
+      thead {
+        tr {
+          background-color: $gray-200;
+
+          th {
+            padding: 8px 14px;
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          margin-top: 2px;
+          border-bottom: 1px solid $gray-200;
+
+          td {
+            padding: 8px 14px;
+          }
+        }
+      }
+
+      .kh-action {
+        text-align: center;
+        width: 164px;
+        background-color: $gray-200;
+        padding: 8px 4px !important;
+
+        a {
+          display: inline-block;
+          padding: 6px 8px;
+          text-decoration: none;
+          border-radius: 2px;
+          background-color: $white;
+
+          svg{
+            width: 20px;
+            height: 20px;
+            fill: $primary;
+          }
+
+          &:nth-child(1) {
+            color: $primary;
+            box-shadow: 1px 1px 2px $gray-400;
+            &:hover {
+              color: $white;
+              background-color: $warning;
+              border-color: $warning;
+              svg{
+                fill: $white;
+              }
+            }
+          }
+
+          &:nth-child(2) {
+            color: $primary;
+            margin: 0 4px;
+            box-shadow: 1px 1px 2px $gray-400;
+            &:hover {
+              color: $white;
+              background-color: $dark;
+              border-color: $dark;
+              svg{
+                fill: $white;
+              }
+            }
+          }
+        }
+
+        form {
+          display: inline-block;
+
+          button {
+            display: inline-block;
+            padding: 6px 8px;
+            background-color: $white;
+            text-decoration: none;
+            border-radius: 2px;
+            color: $primary;
+            margin: 0 2px;
+            border: none;
+            box-shadow: 1px 1px 2px $gray-400;
+            svg{
+              width: 20px;
+              height: 20px;
+              fill: $primary;
+            }
+            &:disabled {
+              color: rgba($danger, 0.3);
+              background-color: $white;
+
+              &:hover {
+                color: rgba($danger, 0.3);
+                background-color: $white;
+                border-color: transparent;
+                svg{
+                  fill: rgba($danger, 0.3);
+                }
+              }
+            }
+
+            &:hover {
+              color: $white;
+              background-color: $danger;
+              border-color: $danger;
+              svg{
+                fill: $white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@include media-breakpoint-down(md) {
+  #index-view {
+    &#{'-body'} {
+      &#{'-search'} {
+        > div {
+          width: 70%
+        }
+
+      }
+    }
+  }
+}

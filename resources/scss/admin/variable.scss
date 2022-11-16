@@ -1,0 +1,61 @@
+//$body-bg:#edf2f9;
+//$primary:#2c7be5;
+$primary:#3b82f6;
+$accent:#f59e0b;
+/*$primary:#0e9647;
+$accent:#f19220;*/
+$primaryDark: #27282c;
+$primaryDarkLight: #323236;
+$side-bar-width: 248px;
+$side-bar-width-small: 84px;
+$top-bar-height: 54px;
+$side-bar-logo-height: 96px;
+$side-bar-header-color:#1a202c;
+$side-bar-body-color:#2d3747;
+// Body
+$body-bg: #edf2f6;
+$black: #000;
+$white: #ffffff;
+
+
+// Typography
+$shadow-color: rgba(0, 0, 0, 0.1);
+
+$web-global-margin:12%;
+$web-nav-bar-z_index:100;
+
+html,:root{
+  scroll-behavior: smooth;
+}
+body {
+  font-family:  "Segoe UI",'Nunito', sans-serif !important;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+
+}
+@mixin tablet{
+  @media screen and (min-width: 576px) and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin phone{
+  @media screen and (max-width: 540px) {
+    @content;
+  }
+}
+/*
+@include media-breakpoint-down(xl){
+
+}
+@include media-breakpoint-down(lg){
+
+}
+
+@include media-breakpoint-down(md){
+
+}
+@include media-breakpoint-down(sm){
+
+}
+*/

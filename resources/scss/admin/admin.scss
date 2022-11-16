@@ -1,0 +1,52 @@
+
+@import "./var";
+@import "./variable";
+@import "./../font/style.css";
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+@import "./partial/utils";
+@import "./partial/kh-app";
+@import "./partial/home";
+@import "./partial/formComponents";
+@import "./partial/kh-input-custom";
+@import "./partial/kh-button-custom";
+@import "./partial/text";
+@import "./partial/index-view";
+@import "./partial/insert-view";
+@import "./partial/display-view";
+@import "./partial/image-view";
+@import "./components/alertDialog";
+@import "./components/chart-item";
+@import "./components/alert";
+@import "./components/table";
+@import "./components/welcome-message";
+@import "partial/image_profile";
+@import "partial/state-view";
+@import "partial/storage-state";
+@import "./components/kh-select";
+@import "./components/media-store";
+@import "./components/kh-tag";
+@import "./components/kh-mask";
+@import "./components/toggle-link";
+@import "./components/tab";
+@import "./components/panel";
+@import "./components/panel";
+@import "./partial/switch";
+@import "./partial/btn-toggle";
+@import "./partial/modal";
+@import "./partial/single_view";
+//@import "./partial/editor";
+@import "./partial/tags";
+@import "./partial/nestable";
+@import "./partial/custom-select";
+//@import "./partial/product-preview-img-container";
+//@import "./partial/category-navigator";
+@import "./components/loader";
+body{
+  background-color: $body-bg;
+  background-attachment: fixed;
+  background-repeat: repeat;
+  background-size: 18px;
+}

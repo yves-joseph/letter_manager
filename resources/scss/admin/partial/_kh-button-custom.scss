@@ -1,0 +1,194 @@
+/*!
+ *  @company DarcFlow design [https://darcflow.com]
+ *  @author    Koroph <yjk@outlook.fr> {(+225)0778329592}
+ *  @website http://koroph.site
+ *  @link      https://github.com/Koroph
+ *  @license   Apache 2.0
+ *  @Copyright (c) 2021.
+ *
+ */
+
+.kh-button-custom {
+    &.disabled {
+        a, button {
+            color: rgba($white, 0.3) !important;
+           svg{
+               fill: rgba($white, 0.3) !important;
+           }
+        }
+
+    }
+  &.primary {
+    a, button {
+      color: rgba($white, 0.8);
+      background-color: $primary !important;
+      border: 1px solid $primary !important;
+
+      &:disabled {
+        color: rgba($white, 0.5);
+      }
+
+      &:hover {
+        color: $white;
+        svg {
+          fill: rgba($white, 1.0);
+        }
+      }
+      svg {
+        fill: rgba($white, 0.8);
+      }
+    }
+
+  }
+
+  &.success {
+    a, button {
+      color: rgba($white, 0.8);
+      background-color: $success !important;
+      border: 1px solid $success !important;
+
+      &:disabled {
+        color: rgba($white, 0.5);
+      }
+
+      &:hover {
+        color: $white;
+        svg {
+          fill: rgba($white, 1.0);
+        }
+      }
+
+      svg {
+        fill: rgba($white, 0.8);
+      }
+    }
+  }
+
+  &.danger {
+    a, button {
+      padding: 8px 24px;
+      color: rgba($white, 0.8);
+      background-color: $danger !important;
+      border: 1px solid $danger !important;
+
+      &:disabled{
+        color: rgba($white, 0.5);
+
+      }
+
+      &:hover {
+        color: $white;
+        svg {
+          fill: rgba($white, 1.0);
+        }
+      }
+      svg {
+        fill: rgba($white, 0.8);
+      }
+    }
+  }
+
+  &.warning {
+    a, button {
+      color: rgba($white, 0.8);
+      background-color: $warning !important;
+      border: 1px solid $warning !important;
+
+      &:disabled{
+        color: rgba($white, 0.5);
+      }
+
+      &:hover {
+        color: $white;
+        svg {
+          fill: rgba($white, 1.0);
+        }
+      }
+      svg {
+        fill: rgba($white, 0.8);
+      }
+    }
+  }
+
+  &.dark {
+    a, button {
+      color: rgba($white, 0.8);
+      background-color: $dark !important;
+      border: 1px solid $dark !important;
+
+      &:disabled {
+        color: rgba($white, 0.5);
+      }
+
+      &:hover {
+        color: $white;
+        svg {
+          fill: rgba($white, 1.0);
+        }
+      }
+      svg {
+        fill: rgba($white, 0.8);
+      }
+    }
+  }
+
+  &.accent {
+    a, button {
+      color: rgba($white, 0.8);
+      background-color: $accent !important;
+      border: 1px solid $accent !important;
+
+      &:disabled {
+        color: rgba($white, 0.5);
+      }
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  &.upper {
+    a, button {
+      text-transform: uppercase;
+    }
+  }
+
+  &.lower {
+    a, button {
+      text-transform: lowercase;
+    }
+  }
+
+  a {
+    display: inline-block;
+    padding: 8px 24px;
+    background-color: $white;
+    border: 1px solid $gray-200;
+    border-radius: 2px;
+    color: $black;
+    text-decoration: none;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.18);
+      &:hover{
+          box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.4);
+      }
+  }
+
+  button {
+    display: inline-block;
+    padding: 8px 24px;
+    background-color: $gray-100;
+    border: 1px solid $gray-200;
+    border-radius: 2px;
+    color: $black;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.18);
+
+    &:focus {
+      outline: none;
+    }
+      &:hover{
+          box-shadow: 1px 2px 8px rgba(0,0,0,0.4);
+      }
+  }
+
+}

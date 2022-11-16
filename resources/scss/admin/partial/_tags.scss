@@ -1,0 +1,30 @@
+@import "../node_modules/@yaireo/tagify/src/tagify";
+
+:root {
+    --tagify-dd-color-primary: $primary;
+}
+
+.tagify{
+    $tags-focus-border-color : $primary;
+    $tag-text-color          : $black !default;
+    $tag-text-color--edit    : $black !default;
+    $tag-bg                  : #E5E5E5 !default;
+    $tag-hover               : #D3E2E2 !default;
+    $tag-remove              : #D39494 !default;
+    $tag-remove-btn-color    : $tag-text-color !default;
+    $tag-remove-btn-bg       : none !default;
+    $tag-remove-btn-bg--hover: darken($tag-remove, 8) !default;
+    $tag-invalid-color       : $tag-remove !default;
+    $tag-invalid-bg          : rgba($tag-remove, .5) !default;
+    $tag-inset-shadow-size   : 1.1em !default;
+    $tag-hide-transition     : .3s !default;
+    $placeholder-color       : rgba($tag-text-color, .4) !default;
+    $placeholder-color-focus : rgba($tag-text-color, .25) !default;
+    $input-color             : inherit !default;
+    $tagify-dd-bg-color      : white !default;
+    $tagify-dd-color-primary :$primary;
+
+
+    border-width: 2px;
+
+}

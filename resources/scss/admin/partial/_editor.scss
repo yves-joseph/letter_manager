@@ -1,0 +1,103 @@
+$editor-height: 255px;
+
+
+.ck-editor__editable.ck-editor__editable_inline {
+    height: 255px;
+}
+
+#df-file-upload-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    overflow: hidden;
+    border-radius: 2px;
+    z-index: 5;
+
+    &#{'-content'} {
+        background-color: white;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        &#{'-type-file'} {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 8px;
+
+            button {
+                border: none;
+                padding: 2px 8px;
+                border-radius: 4px;
+                background-color: transparent;
+
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.1);
+                }
+
+                &:active {
+                    background-color: rgba(0, 0, 0, 0.12);
+                }
+                svg {
+                    width: 22px;
+                    height: 22px;
+                    fill: #DC3545FF;
+                }
+            }
+        }
+
+        &#{'-progress'} {
+            height: 4px;
+            background-color: orange;
+            width: 0;
+            transition: width 300ms linear;
+        }
+
+    }
+}
+
+#outline-none{
+    outline: none !important;
+    background-color: transparent !important;
+    border: none !important;
+    &:focus{
+        outline: none !important;
+    }
+    &:active{
+        outline: none !important;
+    }
+}
+
+
+.document-editor {
+    min-height: 255px;
+    height: 100%;
+    padding: 0.4px;
+    border-radius: 4px;
+    position: relative;
+    .ck.ck-toolbar__items {
+        border: 1px solid $gray-300 !important;
+        background-color: $white;
+    }
+    #document-editor-mask{
+        background-color: rgba($white,0.95);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        padding-top: 24px;
+
+    }
+}
+
+.document-editor__editable-container {
+    height: 100%;
+}

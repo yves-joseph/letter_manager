@@ -1,0 +1,136 @@
+/*!
+ *  @company DarcFlow design [https://darcflow.com]
+ *  @author    Koroph <yjk@outlook.fr> {(+225)0778329592}
+ *  @website http://koroph.site
+ *  @link      https://github.com/Koroph
+ *  @license   Apache 2.0
+ *  @Copyright (c) 2021.
+ *
+ */
+.kh-radio {
+  display: inline-block;
+  height: 24px;
+  min-width: 64px;
+  margin-right: 10px;
+  color: rgba($black,0.7);
+  input {
+    display: none;
+
+    &:checked ~ label {
+      &:after {
+        transition: visibility 200ms ease-in;
+        visibility: visible;
+      }
+
+      &:before {
+        border-color: $primary;
+      }
+    }
+  }
+
+  label {
+    position: relative;
+    user-select: none;
+    text-decoration: none !important;
+    color: $dark !important;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 1.4px solid $gray-600;
+      position: relative;
+      left: -3px;
+      top: 3.6px;
+    }
+
+    &:after {
+      transition: transform 200ms ease-in;
+      content: "";
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 100%;
+      background-color: $primary;
+      position: absolute;
+      left: 1.04px;
+      top: 7.6px;
+      visibility: hidden;
+    }
+  }
+
+}
+
+.kh-checkbox {
+  display: inline-block;
+  margin: 4px 8px;
+  color: rgba($black,0.7);
+  input {
+    display: none;
+
+    &:checked ~ label {
+      &:before {
+        transition: background-color 200ms ease-in;
+        background-color: $primary;
+        border-color: $primary;
+      }
+
+      &:after {
+        transition: visibility 200ms ease-in;
+        visibility: visible;
+        border-color: $white;
+      }
+    }
+  }
+
+  label {
+    position: relative;
+    padding-left: 16px;
+    user-select: none;
+    text-decoration: none !important;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      border: 1.4px solid $gray-600;
+      position: absolute;
+      left: -6px;
+      top: 3px;
+      transition: background-color 200ms ease-in;
+      background-color: transparent;
+    }
+
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 7.4px;
+      height: 12.4px;
+      border-bottom: 2.2px solid $primary;
+      border-right: 2.2px solid $primary;
+      position: absolute;
+      left: -0.5px;
+      top: 4.4px;
+      transform: rotate(32deg);
+      visibility: hidden;
+    }
+  }
+}
+
+.discount-view{
+  position: relative;
+    small{
+      position: absolute;
+      top: -12px;
+      del{
+        color: $gray-500;
+      }
+    }
+  div{
+    margin-top: 4px;
+  }
+}

@@ -1,0 +1,116 @@
+/**
+ * @author Koroph <yjk@outlook.fr>
+ *
+ * @website http://koroph.site
+ * @link  https://github.com/Koroph
+ * @license MIT
+ * @copyright Copyright (c) 2020.
+ */
+$border-radius:4px;
+.koroph-panel {
+  //box-shadow: 1px 1px 4px rgba($black, 0.1);
+  header {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: $border-radius $border-radius 2px 2px;
+    overflow: hidden;
+
+    &.primary_border{
+      border-bottom: 3px solid $primary !important;
+      .koroph-panel-badge{
+        span{
+          border-color:  rgba($primary,0.8) !important;
+        }
+      }
+    }
+    &.border_none{
+      border-bottom-width: 0;
+    }
+    &.primary{
+      background-color: $primary;
+    }
+    &.success{
+      background-color: $success;
+    }
+    &.danger{
+      background-color: $danger;
+    }
+    &.warning{
+      background-color: $warning;
+    }
+    &.dark{
+      background-color: $dark;
+    }
+
+    &.light{
+      background-color: $gray-100;
+      .koroph-panel-text{
+        color: $dark;
+      }
+    }
+    &.grey{
+      background-color: $gray-600;
+    }
+
+    .koroph-panel-badge {
+        margin-right: 8px;
+      span {
+        border: 2px solid rgba($white,0.5);
+        color: $white;
+        display: inline-block;
+        padding: 0 6px;
+        text-align: center;
+        border-radius: 100%;
+        font-size: small;
+      }
+    }
+
+    .koroph-panel-text {
+      flex: 1;
+      color: $white;
+    }
+
+    .koroph-panel-indicator {
+      text-align: center;
+
+      button {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        display: inline-block;
+        padding: 4px;
+        color: rgba($white,0.8);
+        border-radius: 100%;
+        font-weight: bold;
+        margin: 2px;
+        transform: rotate(180deg);
+        &:focus{
+          outline: none;
+        }
+        &.panel-show{
+          transform: rotate(0deg) !important;
+          &:before{
+            margin-top: 4px !important;
+          }
+        }
+        &:before{
+          margin-top: 4px;
+        }
+      }
+    }
+  }
+  .koroph-panel-content{
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    padding: 6px 12px;
+    box-shadow: 1px 1px 4px rgba($black, 0.1);
+    background-color: $white;
+    &.close{
+      display: none;
+    }
+    &.open{
+      display: block;
+    }
+  }
+}

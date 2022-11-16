@@ -1,0 +1,47 @@
+{
+  "yes": "Oui",
+  "no": "Non",
+  "warning": "Avertissement",
+  "danger": "Danger",
+  "info": "Information",
+  "not_defined": "Non défini",
+  "close": "Fermer",
+  "choose": "Choisir",
+  "select": "Sélectionner",
+  "alert": {
+    "ok": "Oui :next"
+  },
+  "chart": {
+    "label": "Nombre de visite",
+    "msg": "Le site a été visité par <strong style=\"color: #28a745;\">:s1</strong> utilisateurs le <strong style=\"color: #28a745;\">:s2</strong>",
+    "msg_graphic": "Le site enregistre pour <strong style=\"color: #28a745;\">:s1</strong>, <strong style=\"color: #28a745;\">:s2</strong> utilisateur(s)"
+  },
+  "mediastore": {
+    "delete_image": "Vous voulez vraiment supprimer cette image ?",
+    "delete_folder": "Vous voulez vraiment supprimer le dossier :s1 ?",
+    "file_info": "Nom du fichier: :s1\nType d'élément: Image :s2\nAjouté le: :s3",
+    "folder_info": "Date de création: :s1\nDimensions: :s2",
+    "del_image": "Aucune image sélectionnée"
+  },
+  "add_product_error": {
+    "fr__name": "Le champ nom du produit en français est obligatoire.",
+    "en__name": "Le champ nom du produit en anglais est obligatoire.",
+    "other__color": "Le champ couleur principal est obligatoire.",
+    "other__maker": "Le champ nom du fabricant est obligatoire.",
+    "other__brand": "Le champ marque du produit est obligatoire.",
+    "fr__keywords": "Le champ mot clé du produit en anglais est obligatoire.",
+    "en__keywords": "Le champ mot clé du produit en français est obligatoire.",
+    "fr__description": "Le champ description du produit en français est obligatoire.",
+    "en__description": "Le champ description du produit en anglais est obligatoire.",
+    "price__var": "Le champ variant de taille est obligatoire.",
+    "price__quantity": "Le champ quantité du produit est obligatoire.",
+    "price__fr": "Le champ prix du produit en français est obligatoire.",
+    "price__en": "Le champ prix du produit en anglais est obligatoire.",
+    "1__image": "Le champ image principal est obligatoire.",
+    "before_add": "Cette action enregistrera un nouveau produit",
+    "before_add_save": "Enregistrer",
+    "before_add_c": "Enregistrer et continué",
+    "update": "Voulez-vous enregistrer les modifications ?",
+    "error": "Une erreur s'est produite, veuillez vérifier votre connexion puis réessayer"
+  }
+}

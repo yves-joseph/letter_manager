@@ -1,0 +1,110 @@
+/**
+ * @author Koroph <yjk@outlook.fr>
+ *
+ * @website http://koroph.site
+ * @link  https://github.com/Koroph
+ * @license MIT
+ * @copyright Copyright (c) 2020.
+ */
+
+.btn-toggle {
+  border: none;
+  text-align: center;
+  display: inline;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  width: auto;
+
+  position: relative;
+  box-shadow: 1px 1px 4px $shadow-color;
+  min-width: 84px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.active {
+   // background-color: rgba($success, 0.18);
+    background-color: $white;
+    padding: 6px 8px;
+    &:hover{
+      background-color: $success;
+      span.active {
+        color: $white;
+      }
+      &:before {
+        background-color: $warning;
+      }
+    }
+    span.active {
+      font-size: 0.85rem;
+      color: $success;
+      text-transform: capitalize;
+      position: relative;
+    }
+    &:before {
+      position: absolute;
+      left: -4px;
+      top: 30%;
+      content: "";
+      display: inline-block;
+      height: 12px;
+      width: 12px;
+      border-radius: 100%;
+      //background-color: $warning;
+      border: 4px double $warning;
+    }
+
+    .in_active {
+      display: none;
+    }
+  }
+
+  &.in_active {
+    //background-color: rgba($warning, 0.18);
+    background-color: $white;
+    padding: 6px 8px;
+    text-align: center;
+    span.in_active {
+      font-size: 0.85rem;
+      color: $warning;
+      text-transform: capitalize;
+      position: relative;
+    }
+    &:hover{
+      background-color: $warning;
+      span.in_active {
+        color: $white;
+      }
+      &:before {
+        background-color: $success;
+      }
+    }
+    &:before {
+      position: absolute;
+      left: -4px;
+      top: 30%;
+      content: "";
+      display: inline-block;
+      height: 12px;
+      width: 12px;
+      border-radius: 100%;
+     // background-color: $success;
+      border: 4px double $success;
+    }
+
+    .active {
+      display: none;
+    }
+  }
+}
+
+.kh-status {
+  display: inline-block;
+  padding: 2px 14px;
+  border-radius: 2px;
+  margin-left: 16px;
+  margin-bottom: 22px;
+  color: $white;
+}

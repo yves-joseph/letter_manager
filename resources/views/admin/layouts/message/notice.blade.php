@@ -1,0 +1,20 @@
+
+@if(session()->has(\App\Http\Enumerations\Notice::SUCCESS->name))
+    <x-alert
+             icon="info"
+            :message="__(session(\App\Http\Enumerations\Notice::SUCCESS->name))"
+            type="success"
+        position="topRight"></x-alert>
+@elseif(session()->has(\App\Http\Enumerations\Notice::WARNING->name))
+    <x-alert
+            :message="__(session(\App\Http\Enumerations\Notice::WARNING->name))"
+            type="warning"
+            icon="warning"
+            position="topRight"></x-alert>
+@elseif(session()->has(\App\Http\Enumerations\Notice::ERROR->name))
+    <x-alert
+            :message="__(session(\App\Http\Utils\Notice::ERROR->name))"
+            type="danger"
+            icon="report"
+            position="topRight"></x-alert>
+@endif

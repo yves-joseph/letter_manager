@@ -1,0 +1,80 @@
+/*!
+ * @company DarcFlow design [https://darcflow.com]
+ * @author    Koroph <yjk@outlook.fr> (+225 0778329592)
+ * @website http://koroph.site
+ * @link      https://github.com/Koroph
+ * @license   Apache 2.0
+ * @Copyright (c) 2021.
+ *
+ */
+
+.kh-native-chip{
+
+
+}
+.kh-chip-base-container{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 45px;
+  &#{'-chip'}{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4px;
+    .chip-item{
+      padding: 2px 8px;
+      box-shadow: 1.4px 1.4px 4px rgba(0,0,0,0.2);
+      background-color: $gray-200;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      margin: 0 4px;
+      overflow: hidden;
+      &#{'-text'}{
+        flex: 1;
+      }
+      &#{'-del'}{
+        display: block;
+        margin-left: 6px;
+        border: none;
+        background-color: transparent;
+        margin-bottom: 4px;
+        transform: scale(1.4);
+        &:hover{
+          color: $danger;
+        }
+      }
+    }
+  }
+  &#{'-input'}{
+    position: relative;
+    &#{'-field'}{
+      border: none;
+      padding: 6px 8px;
+      &:focus{
+        outline: none;
+      }
+      &:disabled{
+        //background-color: $gray-100;
+        color: $gray-500 !important;
+      }
+    }
+    &#{'-search'}{
+      position: absolute;
+      top: 100%;
+      z-index: 1;
+      width: 100%;
+      box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+      border-radius: 2px;
+      background-color: $white;
+      .search-item{
+        padding: 8px 14px;
+        cursor: pointer;
+        &:hover{
+          background-color: $gray-200;
+        }
+      }
+    }
+  }
+}

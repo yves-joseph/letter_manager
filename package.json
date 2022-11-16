@@ -1,0 +1,28 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "axios": "^0.27",
+        "chart.js": "^3.6.2",
+        "jquery": "^3.6.0",
+        "laravel-vite-plugin": "^0.5.0",
+        "lodash": "^4.17.19",
+        "nestable2": "^1.6.0",
+        "postcss": "^8.1.14",
+        "vite": "^3.0.0"
+    },
+    "dependencies": {
+        "@yaireo/tagify": "^4.16.0",
+        "bootstrap": "^5.2.0",
+        "cropperjs": "^1.5.12",
+        "gridjs": "^5.0.2",
+        "gridjs-react": "^5.0.2",
+        "nestable": "^0.2.0",
+        "jquery-ui": "^1.13.1",
+        "sass": "^1.54.3",
+        "tom-select": "^2.1.0"
+    }
+}

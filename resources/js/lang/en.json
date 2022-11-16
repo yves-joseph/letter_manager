@@ -1,0 +1,47 @@
+{
+    "yes": "Yes",
+    "no": "No",
+    "warning": "Warning",
+    "danger": "Danger",
+    "info": "Information",
+    "not_defined": "Not defined",
+    "close": "Close",
+    "choose": "Choose",
+    "select": "Select",
+    "chart": {
+        "label":"Number of visits",
+        "msg": "The site was visited by <strong style=\"color: #28a745;\">:s1</strong>, users on <strong style=\"color: #28a745;\">:s2</strong>",
+        "msg_graphic": "The site is registered for <strong style=\"color: #28a745;\">:s1</strong>, <strong style=\"color: #28a745;\">:s2</strong> user(s)"
+    },
+    "alert": {
+        "ok": "Oui :next"
+    },
+    "mediastore": {
+        "delete_image": "Do you really want to delete this image?",
+        "delete_folder":"Do you really want to delete the folder :s1 ?",
+        "file_info": "File name: :s1\nType: Image \nExtension: :s2\nmodified: :s3",
+        "folder_info": "Creation date: :s1\nDimensions: :s2",
+        "del_image": "No image selected"
+    },
+    "add_product_error": {
+        "fr__name": "The product name field in French is mandatory.",
+        "en__name": "The English product name field is required.",
+        "other__color": "The primary color field is required.",
+        "other__maker": "The maker name field is required.",
+        "other__brand": "The product brand field is required.",
+        "fr__keywords": "The product keyword field in English is required.",
+        "en__keywords": "The product keyword field in French is required.",
+        "fr__description": "The product description field in French is mandatory.",
+        "en__description": "The product description field in English is required.",
+        "price__var": "The size variant field is required.",
+        "price__quantity": "The product quantity field is required.",
+        "price__fr": "The product price field in French is mandatory.",
+        "price__en": "The product price field in English is required.",
+        "1__image": "The main image field is required.",
+        "before_add": "This action will register a new product",
+        "before_add_save": "Save",
+        "before_add_c": "Save and continue",
+        "update": "Do you want to save changes?",
+        "error": "An error has occurred, please verify your connection and try again"
+    }
+}

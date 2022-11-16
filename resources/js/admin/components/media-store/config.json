@@ -1,0 +1,12 @@
+{
+  "add_folder": "/admin/api/media/store/directory/create",
+  "remove_folder": "/admin/api/media/store/directory/destroy/:id",
+  "add_file": "/admin/api/media/store/files/create",
+  "remove_file": "/admin/api/media/store/files/destroy/:id",
+  "files": "/admin/api/media/store/files",
+  "update_file": "/admin/api/media/store/files/update",
+  "default_size": {
+    "width": 300,
+    "height": 300
+  }
+}

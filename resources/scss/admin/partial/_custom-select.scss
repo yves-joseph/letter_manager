@@ -1,0 +1,49 @@
+@import "../node_modules/tom-select/src/scss/tom-select.bootstrap5";
+
+
+.ts-wrapper{
+
+    .ts-control{
+        border: none;
+        background-color: rgba($gray-100, 0.95);
+        border-radius: 2px;
+        outline-color: transparent;
+        outline: none;
+    }
+
+
+}
+
+.focus .ts-control {
+    border-color: $primary;
+    outline: 0;
+    box-shadow: none !important;
+}
+.focus .ts-control {
+    box-shadow: none;
+}
+
+.__base{
+    display: flex;
+    align-items: center;
+    .__base_right{
+
+    }
+    .__base_center{
+        flex: 1;
+    }
+    .__base_left{
+        padding-right: 8px;
+        display: flex;
+        align-items: center;
+        img,svg{
+           max-width: 32px;
+           max-height: 32px;
+            width: 24px;
+            height: 24px;
+        }
+        span{
+            margin-left: 4px;
+        }
+    }
+}

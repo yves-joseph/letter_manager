@@ -1,0 +1,166 @@
+
+#_modal_container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+
+  #_modal_container-content {
+    width: 50%;
+    height: 80vh;
+    background-color: $white;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);
+    border-radius: 2px;
+    overflow: hidden;
+
+    #_modal_container-content-header {
+      background-color: $primary;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 36px;
+
+      &#{'-title'} {
+        color: $white;
+        font-weight: 600;
+        padding-left: 16px;
+        font-size: 1.1rem;
+      }
+
+      &#{'-close'} {
+        button {
+          padding: 0 8px;
+          height: 36px;
+          display: block;
+          background-color: transparent;
+          border: none;
+
+          svg {
+            fill: $white;
+          }
+
+          &:hover {
+            background-color: $danger;
+          }
+        }
+      }
+    }
+
+    #_modal_container-content-nav {
+      padding: 8px 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      #_modal_container-content-nav-search {
+        width: 85%;
+        display: flex;
+        align-items: center;
+        height: 34px;
+        position: relative;
+
+        input {
+          flex: 1;
+          padding: 4px 8px;
+          border: 2px solid $gray-300;
+          height: 100%;
+          border-bottom-left-radius: 1px;
+          border-top-left-radius: 1px;
+
+          &:focus {
+            outline: none;
+            border-color: $primary;
+
+            ~ label {
+              background-color: $primary;
+
+              svg {
+                fill: $white;
+              }
+            }
+          }
+        }
+
+        label {
+          background-color: $gray-300;
+          height: 100%;
+          padding: 0 8px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-bottom-right-radius: 1px;
+          border-top-right-radius: 1px;
+
+          svg {
+            fill: $primary;
+          }
+        }
+
+        #_modal_container-content-nav-search-link-container {
+          position: absolute;
+          top: 110%;
+          left: 0;
+          z-index: 50;
+          width: 100%;
+          background-color: $white;
+          box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
+          border-radius: 1px;
+          max-height: 50vh;
+          overflow-y: auto;
+          overflow-x: hidden;
+          scroll-bar:thin;
+          //padding: 2px 0;
+
+          ._modal_container-content-nav-search-link-item {
+            padding: 4px 12px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid $gray-200;
+
+            ._modal_container-content-nav-search-link-item-text {
+              flex: 1;
+              ._modal_container-content-nav-search-link-item-text-content{
+                font-size: 0.9rem;
+                font-weight: 600;
+                color: $dark;
+                margin: 0;
+                padding: 0;
+              }
+              ._modal_container-content-nav-search-link-item-text-nav{
+                color: $gray-600;
+                font-size: 0.64rem;
+                text-transform: lowercase;
+              }
+            }
+
+            ._modal_container-content-nav-search-link-item-link {
+              a {
+                text-decoration: none;
+                background-color: $gray-200;
+                display: inline-block;
+                padding: 4px 12px;
+                font-size: 0.8em;
+                border-radius: 1px;
+                font-weight: 600;
+                box-sizing: border-box;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    #_modal_container-content-body {
+      height: 100%;
+      padding: 0 16px;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+  }
+}

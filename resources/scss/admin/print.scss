@@ -1,0 +1,45 @@
+
+
+:root{
+  box-sizing: border-box;
+}
+body{
+  padding: 0;
+  margin: 0;
+}
+
+#invoice-print-view{
+  font-family: "Segoe UI", SansSerif, sans-serif;
+  table{
+    width: 100%;
+  }
+  table#info-view{
+    border-collapse: collapse;
+    border-color: #323236;
+    thead{
+      background-color: black;
+      tr{
+        th{
+          text-align: left;
+          padding: 8px;
+          font-weight: 500;
+          color: white;
+        }
+      }
+    }
+    tbody{
+      tr{
+        td{
+          padding: 8px;
+        }
+      }
+    }
+    tfoot{
+      tr{
+        td{
+          padding: 8px;
+        }
+      }
+    }
+  }
+}

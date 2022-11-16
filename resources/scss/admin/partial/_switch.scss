@@ -1,0 +1,59 @@
+$switch-dot-color: $white;
+$switch-bar-color: #efefef;
+.kh-switch{
+    display: inline-flex;
+    align-items: center;
+
+    &#{'-input'}{
+        display: none;
+        &:checked ~ .kh-switch-label{
+            background-color: rgba($primary,0.5);
+            &:after{
+                top: -20.4%;
+                background-color: $primary;
+                transform: scale(1) translateX(16px);
+            }
+            &:active{
+                &:after{
+                    transform: scale(0.7) translateX(30px);
+                }
+            }
+        }
+    }
+    &#{'-label'}{
+        height: 14.8px;
+        width: 36px;
+        background-color: $switch-bar-color;
+        border-radius: 16px;
+        display: inline-block;
+        position: relative;
+
+        &:after{
+            content: "";
+            position: absolute;
+            top: -20.4%;
+            right: auto;
+            left: 0;
+            transform: scale(1) translateX(0px);
+            display: inline-block;
+            padding: 10px;
+            border-radius: 100%;
+            background-color: $switch-dot-color;
+            box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+        }
+        &:active{
+            &:after{
+                transform: scale(0.7) translateX(-5px);
+            }
+        }
+    }
+    .kh-switch-lbl{
+       margin: 0 4px 2px 4px;
+        color: $black;
+        font-weight: 600;
+        font-size: 0.8rem;
+        &:first-letter{
+            text-transform: uppercase;
+        }
+    }
+}

@@ -1,0 +1,191 @@
+/*!
+ *  @company DarcFlow design [https://darcflow.com]
+ *  @author    Koroph <yjk@outlook.fr> {(+225)0778329592}
+ *  @website http://koroph.site
+ *  @link      https://github.com/Koroph
+ *  @license   Apache 2.0
+ *  @Copyright (c) 2021.
+ *
+ */
+
+#login {
+  display: flex;
+  height: 100vh;
+
+  .login-item-view {
+
+    &:first-child {
+      @extend .col-1, .col-md-9;
+      background: url("../../images/login.jpg") no-repeat;
+      background-size: cover;
+      padding: 0;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      #login-item-view-about {
+        position: absolute;
+        bottom: 12px;
+        left: 30%;
+        background-color: rgba($white, 0.4);
+        padding: 8px 24px;
+        border-radius: 4px;
+        text-align: center;
+
+        h3 {
+          font-weight: 800;
+          font-size: 3rem;
+          color: $black;
+          text-shadow: 2px 2px 0 $gray-500;
+        }
+
+        p {
+          font-weight: 600;
+        }
+      }
+    }
+
+    &:last-child {
+      @extend .col-12, .col-md-3;
+      background-color: $white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+
+      #login-item-view-form {
+        width: 100%;
+
+        h3 {
+          padding: 0 8px;
+          position: relative;
+          display: inline-block;
+
+          &:before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            left: 8px;
+            bottom: 0;
+            height: 3px;
+            width: 50%;
+            background-color: $primary;
+            border-radius: 6px;
+
+          }
+
+        }
+
+        .login-item-view-form-content {
+          width: 100%;
+          padding: 16px 8px;
+
+          .login-item-view-form-item {
+            margin-top: 14px;
+            padding: 6px 10px;
+            border: 2px solid $gray-400;
+            border-radius: 4px;
+            position: relative;
+
+            label {
+              font-size: 0.9rem;
+              margin: 0;
+              padding: 0;
+              color: $gray-700;
+              font-weight: 600;
+              transition: font-size 300ms ease-out;
+
+              &.active {
+                transition: font-size 300ms ease-in;
+                font-size: 0.75rem;
+                color: $primary;
+              }
+            }
+
+            input {
+              width: 100%;
+              padding: 4px;
+              border: none;
+              border-radius: 2px;
+              background-color: $gray-100;
+              &:focus {
+                outline: none;
+                border-color: $primary;
+              }
+            }
+
+            > button {
+              position: absolute;
+              bottom: 12px;
+              right: 10px;
+              border: none;
+              background-color: transparent;
+
+              &:focus {
+                outline: none;
+              }
+            }
+          }
+        }
+
+        #login-item-view-form-btn {
+          width: 100%;
+          padding: 16px;
+          text-align: right;
+
+          button {
+            border: 2px solid $primary;
+            background:$primary;
+            color: $white;
+            padding: 6px 24px;
+            border-radius: 2px;
+            box-shadow: 1.2px 1.2px 6px rgba(0,0,0,0.3);
+            width: 100%;
+            text-transform: uppercase;
+            display: flex;
+            #login-item-view-form-btn-icon{
+              svg{
+                fill: $white;
+              }
+            }
+            #login-item-view-form-btn-label{
+              flex: 1;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+
+      #login-item-view-error {
+        position: absolute;
+        top: 10px;
+        right: 4px;
+        width: 90%;
+        padding: 16px;
+        box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+        background-color: $danger;
+        border-radius: 2px;
+        border-left: 4px solid darkred;
+        color: $white;
+        transition: right 300ms ease-out;
+      }
+    }
+  }
+
+}
+
+@include media-breakpoint-down(md) {
+  #login {
+
+    .login-item-view {
+
+      &:first-child {
+        display: none;
+      }
+    }
+  }
+}

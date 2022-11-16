@@ -1,0 +1,42 @@
+/*!
+ *  @company DarcFlow design [https://darcflow.com]
+ *  @author    Koroph <yjk@outlook.fr> {(+225)0778329592}
+ *  @website http://koroph.site
+ *  @link      https://github.com/Koroph
+ *  @license   Apache 2.0
+ *  @Copyright (c) 2021.
+ *
+ */
+
+#welcome-message{
+  position: fixed;
+  bottom: 32px;
+  left: 15%;
+  background-color: $primary;
+  color: $white;
+  padding: 8px 14px;
+  border-radius: 4px;
+  box-shadow: 1px 2px 4px rgba(0,0,0,0.2);
+  z-index: 124;
+  strong{
+    text-transform: capitalize;
+  }
+  button{
+    background-color: transparent;
+    border: none;
+    padding: 4px 14px;
+    color: rgba($white,0.6);
+    &:focus{
+      outline: none;
+    }
+    &:hover{
+      color: $white;
+      background-color: rgba(255,255,255,0.1);
+    }
+    &:active{
+      color: $white;
+      background-color: rgba(255,255,255,0.2);
+    }
+  }
+}
+

@@ -1,0 +1,235 @@
+$nestable-bg-color: #f4f4f4;
+.dd {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+    /*max-width: 600px;*/
+    list-style: none;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.category_view {
+    margin-top: 24px;
+    max-height: 70vh;
+    min-height: 35vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollBar: thin;
+    position: relative;
+
+    h5 {
+        color: $gray-400;
+    }
+}
+
+.dd-list {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+
+.dd-list .dd-list {
+    padding-left: 30px
+}
+
+.dd-empty, .dd-item, .dd-placeholder {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    min-height: 20px;
+    font-size: 13px;
+    line-height: 20px
+}
+
+.dd-handle, .dd-nodrag {
+    font-family: "Roboto Light", "Segoe UI", sans-serif;
+    display: block;
+    margin: 8px 0;
+    color: $black;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.12);
+    padding: 12px 16px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    background-color: $white;
+}
+
+.dd-handle div:first-letter {
+    text-transform: uppercase;
+}
+
+.dd-nodrag {
+    cursor: no-drop;
+}
+
+._action_container {
+    position: absolute;
+    z-index: 4;
+    right: 16px;
+    top: 8px;
+}
+
+._action_container a {
+    display: inline-block;
+    padding: 2px 6px;
+    margin: 0 2px;
+    position: relative;
+}
+
+._action_container a svg {
+    width: 18px;
+    height: 18px;
+    fill: rgba($black, 0.2);
+}
+
+._action_container a:nth-child(1)[href] svg {
+    fill: rgba($black, 0.4);
+}
+
+._action_container a:nth-child(2)[href] svg {
+    fill: rgba($black, 0.4);
+}
+
+._action_container a:nth-child(3)[href] svg {
+    fill: rgba($black, 0.4);
+}
+
+._action_container a:nth-child(1)[href] svg:hover {
+    fill: $warning;
+}
+
+._action_container a:nth-child(2)[href] svg:hover {
+    fill: $dark;
+}
+
+._action_container a:nth-child(3)[href] svg:hover {
+    fill: $danger;
+}
+
+._action_container .link_select {
+    text-decoration: none;
+    background-color: $white;
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 2px;
+    font-weight: 600;
+}
+
+.dd-nodrag {
+    background-color: rgba(0, 0, 0, 0.01);
+    color: rgba($black, 0.2);
+}
+
+.dd-nodrag.active {
+    background-color: $nestable-bg-color;;
+    color: $black;
+    cursor: pointer !important;
+}
+
+.dd-handle:hover {
+    color: $primary;
+    background: rgba($nestable-bg-color, 0.5)
+}
+
+.dd-item > button {
+    position: relative;
+    bottom: -4px;
+    cursor: pointer;
+    float: left;
+    width: 22px;
+    height: 22px;
+    margin: 6px 4px 6px 8px;
+    padding: 0;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    border: 0;
+    background: 0 0;
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
+    font-weight: 700;
+    background-color: $primary;
+    border-radius: 2px;
+    box-shadow: 1px 4px 6px rgba(0,0,0,0.2);
+}
+
+.dd-item > button:before {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    text-indent: 0;
+    cursor: pointer;
+    border-radius: 1px;
+    background-color: $primary;
+    color: #FFFFFF;
+    padding-bottom: 6px;
+}
+
+.dd-item > button[data-action="expand"]:before {
+    content: '+';
+    font-size: 1rem;
+}
+
+.dd-item > button[data-action="collapse"]:before {
+    content: '-';
+    font-size: 1rem;
+}
+
+.dd-expand {
+    display: none
+}
+
+.dd-collapsed .dd-collapse, .dd-collapsed .dd-list {
+    display: none
+}
+
+.dd-collapsed .dd-expand {
+    display: block
+}
+
+.dd-empty, .dd-placeholder {
+    margin: 5px 0;
+    padding: 0;
+    min-height: 30px;
+    background: $body-bg;
+    border: 1px dashed rgba($primary, 0.5);
+    box-sizing: border-box;
+    -moz-box-sizing: border-box
+}
+
+.dd-empty {
+    border: 1px dashed rgba($primary, 0.5);
+    min-height: 100px;
+    background-color: $body-bg;
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px
+}
+
+.dd-dragel {
+    position: absolute;
+    pointer-events: none;
+    z-index: 9999
+}
+
+.dd-dragel > .dd-item .dd-handle {
+    margin-top: 0;
+}
+
+.dd-dragel .dd-handle {
+    box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, .1)
+}
+
+.dd-nochildren .dd-placeholder {
+    display: none
+}

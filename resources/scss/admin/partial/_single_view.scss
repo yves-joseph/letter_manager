@@ -1,0 +1,29 @@
+.single_view{
+  margin-top: 16px;
+  .single_view-item{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    background-color: $white;
+    border-radius: 1px;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    padding: 8px 14px;
+    .single_view-item-label{
+
+    }
+    .single_view-item-action{
+      display: flex;
+      a{
+
+      }
+      button{
+        border: none;
+        background-color: transparent;
+      }
+      svg{
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+}
