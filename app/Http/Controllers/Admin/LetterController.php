@@ -97,7 +97,19 @@ class LetterController extends Controller
     public function store(LetterStoreRequest $request): RedirectResponse
     {
         Gate::authorize('granted', 'ROLE_LETTERS_CREATE');
-        if (Letter::query()->create($request->validated())) {
+
+        $__data = $request->validated();
+        $__users = [];
+
+        if (isset($__data['users'])) {
+            $__users = $__data['users'];
+            unset($__data['users']);
+        }
+        /**
+         * @var $letter Letter
+         */
+        if ($letter = Letter::query()->create($__data)) {
+            $letter->users()->sync($__users);
             session()->flash(Notice::SUCCESS->name, Notice::SUCCESS->value);
         } else session()->flash(Notice::ERROR->name, Notice::ERROR->value);
 
@@ -142,7 +154,17 @@ class LetterController extends Controller
     public function update(LetterUpdateRequest $request, Letter $letter): RedirectResponse
     {
         Gate::authorize('granted', 'ROLE_LETTERS_EDIT');
-        if ($letter->update($request->validated())) {
+
+        $__data = $request->validated();
+        $__users = [];
+
+        if (isset($__data['users'])) {
+            $__users = $__data['users'];
+            unset($__data['users']);
+        }
+
+        if ($letter->update($__data)) {
+            $letter->users()->sync($__users);
             session()->flash(Notice::SUCCESS->name, Notice::SUCCESS->value);
         } else session()->flash(Notice::ERROR->name, Notice::ERROR->value);
         return redirect()->back();

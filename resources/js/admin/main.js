@@ -12,7 +12,7 @@ import activeFieldParent from "./partial/field";
 import closeAlertAction from "./partial/alert";
 import CheckboxGroup from "./components/CheckboxGroup";
 import BtnToggle from "./partial/buttonToggle";
-import modalAction from "./partial/modal";
+
 import tagView from "./partial/tag";
 import customSelect from "./partial/custom-select";
 import TableView from "./components/table";
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     switchValueToggle();
     activeFieldParent();
     closeAlertAction();
-    modalAction();
+   // modalAction();
 
     new TableView();
 

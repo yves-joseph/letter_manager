@@ -36,7 +36,8 @@ class LetterStoreRequest extends FormRequest
             "recipient_full_name" => ['required', 'max:255'],
             "receive_at" => ['required'],
             "file_path" => ['nullable', 'mimes:pdf'],
-            "detail" => ['nullable', 'string']
+            "detail" => ['nullable', 'string'],
+            'users' => ['nullable', 'array']
         ];
     }
 

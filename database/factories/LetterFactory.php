@@ -30,9 +30,8 @@ class LetterFactory extends Factory
             "recipient_full_name" => fake()->lastName() . ' ' . fake()->lastName(),
             "receive_at" => Carbon::now(),
             "file_path" => fake()->randomElement([
-                "",
-                "",
-                ""
+                "letters/letter1.pdf",
+                "letters/letter2.pdf"
             ]),
             "detail" => fake()->paragraph()
         ];

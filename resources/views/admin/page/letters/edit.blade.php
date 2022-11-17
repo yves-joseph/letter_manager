@@ -1,28 +1,7 @@
 @extends('admin.layouts.index')
 
 @section('main')
-    <x-insert :action="route('users.update',['user'=>$user->id])" method="put">
-        <div class="row" style="margin-bottom: 24px;">
-            <div class="col-auto">
-                <x-image-picker
-                    label="Image de profil"
-                    name="image_path"
-                    :required="false"
-                    icon="user"
-                    :url="$user->imageBySize(200,200) ?? null"
-                    width="200px"
-                    height="200px"></x-image-picker>
-            </div>
-        </div>
-        <div class="row" style="margin: 0 0 8px 0;">
-            <div class="col-auto">
-                <x-switch
-                    label="Statut du compte"
-                    :checked="$user->activated->value"
-                    position="start"
-                    name="activated"></x-switch>
-            </div>
-        </div>
+    <x-insert :action="route('letters.update',['letter'=>$letter->id])" method="put">
         <div class="row">
             <div class="col-12 col-md-6">
                 <x-input
@@ -65,40 +44,6 @@
                     :value="old('phone') ?? $user->phone"></x-input>
             </div>
         </div>
-        @granted('ROLE_USERS_AUTHORISATION')
-        <div class="row">
-            <div class="col-12">
-                <div class="kh-input-custom">
-                    <div style="margin: 8px 0;overflow: hidden;">
-                        <div class="row">
-                            @foreach(checkedMenu($user->role) as $item)
-                                <div class="col-12  col-sm-6 col-md-4 col-lg-3 col-xl-2 kh-group_item"
-                                     style="margin-bottom: 16px;">
-                                    <x-group
-                                        :label="$item['label']"
-                                        :name="$item['name']"
-                                        :value="$item['value']"></x-group>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                    <label>
-                        Autorisations
-                        <span>**</span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        @endgranted
-        <div class="row">
-            <div class="col-auto">
-                <x-a
-                    label="Modifier le mot de passe"
-                    type="warning"
-                    :href="route('password_reset.index',['user'=>$user->id])"
-                    svg="lock"></x-a>
-            </div>
-        </div>
     </x-insert>
 @endsection
 
@@ -108,7 +53,7 @@
 @section('navigate')
     <x-navigate-bar>
         <x-navigate-bar-link
-            :url="route('users.index')"
+            :url="route('letters.index')"
             label="Utilisateurs"></x-navigate-bar-link>
         <x-navigate-bar-link
             :url="\Illuminate\Support\Facades\URL::current()"

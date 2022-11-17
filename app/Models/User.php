@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Http\Enumerations\Activated;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -101,8 +102,8 @@ class User extends Authenticatable
         return $this->belongsTo(Service::class,'service_id','id');
     }
 
-    public function letters(): HasMany
+    public function letters(): BelongsToMany
     {
-        return $this->hasMany(Letter::class, 'user_id', 'id');
+        return $this->belongsToMany(Letter::class, 'users_letters', 'user_id','letter_id');
     }
 }

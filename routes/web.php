@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::redirect('/','login');
+Route::redirect('/', 'admin/login');
 
-require_once __DIR__."/admin/main.php";
+require_once __DIR__ . "/admin/main.php";

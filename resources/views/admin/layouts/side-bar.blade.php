@@ -3,11 +3,12 @@
     <header id="kh-app-side-bar-header">
         <div>
             <div>
-                <img src="{{ asset('storage/system/logo.png') }}"
-                     width="45"
-                     height="45"
-                     decoding="async"
-                     alt="{{ config('app.name', 'TAM') }}">
+                <img
+                    src="{{ asset('storage/system/logo.png') }}"
+                    width="45"
+                    height="45"
+                    decoding="async"
+                    alt="{{ config('app.name', 'TAM') }}">
             </div>
             <strong>
                 {{ config('app.name', 'TAM') }}
@@ -17,15 +18,15 @@
     <div id="kh-app-side-bar-link">
         @foreach(config('menu',[])  as $link)
             @granted($link['permission'])
-            @if($loop->last)
+            {{--@if($loop->last)
                 <div style="flex: 1;"></div>
-            @endif
-             <x-side-bar-link
-                 :label="$link['title']"
-                 :subLabel="$link['title_small']"
-                 :routeName="$link['path']"
-                 :moreRouteName="$link['pathOther']"
-                 :icon="$link['icon']"></x-side-bar-link>
+            @endif--}}
+            <x-side-bar-link
+                :label="$link['title']"
+                :subLabel="$link['title_small']"
+                :routeName="$link['path']"
+                :moreRouteName="$link['pathOther']"
+                :icon="$link['icon']"></x-side-bar-link>
             @endgranted
         @endforeach
     </div>

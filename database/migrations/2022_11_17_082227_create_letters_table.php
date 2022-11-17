@@ -23,6 +23,7 @@ return new class extends Migration {
             $table->string('file_path')->nullable();
             $table->text('detail')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

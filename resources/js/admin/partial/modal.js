@@ -1,5 +1,4 @@
- import SortHorizontalView from "../components/nestable/SortHorizontalView";
-import {categorySearchView} from "./category_search";
+
 
 export default function modalAction() {
     const btnOpen = document.getElementById('_open_modal'),

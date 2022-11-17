@@ -5,12 +5,16 @@ namespace App\Models;
 use App\Http\Enumerations\LetterType;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\UploadedFile;
 
+/**
+ * @mixin IdeHelperLetter
+ */
 class Letter extends Model
 {
-    use HasFactory,SoftDeletes;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         "user_id",
@@ -39,6 +43,12 @@ class Letter extends Model
     }
 
     protected $casts = [
-        "type" => LetterType::class
+        "type" => LetterType::class,
+        "receive_at" => "datetime"
     ];
+
+    public function users(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'users_letters', 'letter_id', 'user_id');
+    }
 }
