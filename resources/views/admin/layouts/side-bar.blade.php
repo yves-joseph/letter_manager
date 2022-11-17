@@ -1,5 +1,5 @@
 <div id="kh-app-side-bar"
-     style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.68)), url({{ asset('storage/system/side-bar.jpg') }});">
+     style="background-image: linear-gradient(to bottom, rgba(1,105,1,0.44), rgba(1,134,1,0.8)), url({{ asset('storage/system/side-bar.jpg') }});">
     <header id="kh-app-side-bar-header">
         <div>
             <div>

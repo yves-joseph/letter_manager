@@ -63,7 +63,7 @@ class User extends Authenticatable
     public function setPermissionAttribute($permission)
     {
         if (!$permission) return;
-        $this->attributes['role'] = json_encode($permission);
+        $this->attributes['role'] = json_encode(array_unique($permission));
     }
 
     public function setImageIdAttribute($imageId)

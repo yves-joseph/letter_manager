@@ -116,7 +116,7 @@ class UserController extends Controller
     {
         Gate::authorize('granted', 'ROLE_USERS_SHOW');
         return view($this->basePath . __FUNCTION__, [
-            'user' => $user->load('image:id,url')
+            'user' => $user
         ]);
     }
 
@@ -130,7 +130,7 @@ class UserController extends Controller
     {
         Gate::authorize('granted', 'ROLE_USERS_EDIT');
         return view($this->basePath . __FUNCTION__, [
-            'user' => $user->load('image:id,url')
+            'user' => $user
         ]);
     }
 
@@ -143,7 +143,7 @@ class UserController extends Controller
      */
     public function update(UserUpdateRequest $request, User $user): RedirectResponse
     {
-        //Gate::authorize('granted', 'ROLE_USERS_EDIT');
+        Gate::authorize('granted', 'ROLE_USERS_EDIT');
         if ($user->update($request->validated())) {
             session()->flash(Notice::SUCCESS->name, Notice::SUCCESS->value);
         } else session()->flash(Notice::ERROR->name, Notice::ERROR->value);
@@ -191,7 +191,7 @@ class UserController extends Controller
     public function initProfilImage(User $user): JsonResponse
     {
         $is = $user->update([
-            'image_id' => null
+            'image_path' => null
         ]);
         return new JsonResponse([
             'is' => $is

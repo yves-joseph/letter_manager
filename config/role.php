@@ -75,32 +75,32 @@ return [
             "value" => [
                 [
                     "label" => "role.menu",
-                    "value" => "ROLE_LETTERS_MENU",
+                    "value" => "ROLE_SERVICES_MENU",
                     "disabled" => false
                 ],
                 [
                     "label" => "role.show",
-                    "value" => "ROLE_LETTERS_SHOW",
+                    "value" => "ROLE_SERVICES_SHOW",
                     "disabled" => false
                 ],
                 [
                     "label" => "role.saving",
-                    "value" => "ROLE_LETTERS_CREATE",
+                    "value" => "ROLE_SERVICES_CREATE",
                     "disabled" => false,
                 ],
                 [
                     "label" => "role.edit",
-                    "value" => "ROLE_LETTERS_EDIT",
+                    "value" => "ROLE_SERVICES_EDIT",
                     "disabled" => false,
                 ],
                 [
                     "label" => "role.delete",
-                    "value" => "ROLE_LETTERS_DESTROY",
+                    "value" => "ROLE_SERVICES_DESTROY",
                     "disabled" => false,
                 ],
                 [
                     "label" => "role.trash",
-                    "value" => "ROLE_LETTERS_TRASH",
+                    "value" => "ROLE_SERVICES_TRASH",
                     "disabled" => false,
                 ]
             ]
