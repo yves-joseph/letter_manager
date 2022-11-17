@@ -28,6 +28,7 @@ class User extends Authenticatable
         'email',
         'image_path',
         'password',
+        'service_id',
         'role',
         'activated',
         'remember_token'

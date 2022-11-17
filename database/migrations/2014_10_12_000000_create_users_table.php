@@ -14,6 +14,8 @@ return new class extends Migration {
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('service_id')
+                ->nullable();
             $table->string('image_path')
                 ->nullable();
             $table->string('firstname');
