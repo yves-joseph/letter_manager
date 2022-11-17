@@ -19,5 +19,25 @@ return [
         ],
         "permission" => "ROLE_USERS_MENU",
         "hr" => true
+    ],
+    [
+        "icon" => "home_repair_service",
+        "title" => "menu.services",
+        "title_small" => "menu.services",
+        "path" => "services",
+        "pathOther" => [
+        ],
+        "permission" => "ROLE_SERVICES_MENU",
+        "hr" => true
+    ],
+    [
+        "icon" => "mark_email_unread",
+        "title" => "menu.letters",
+        "title_small" => "menu.letters",
+        "path" => "letters",
+        "pathOther" => [
+        ],
+        "permission" => "ROLE_LETTERS_MENU",
+        "hr" => true
     ]
 ];

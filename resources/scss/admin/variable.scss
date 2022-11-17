@@ -1,7 +1,7 @@
 //$body-bg:#edf2f9;
 //$primary:#2c7be5;
-$primary:#3b82f6;
-$accent:#f59e0b;
+$primary:#f5870e;
+$accent:#47975f;
 /*$primary:#0e9647;
 $accent:#f19220;*/
 $primaryDark: #27282c;
@@ -11,7 +11,8 @@ $side-bar-width-small: 84px;
 $top-bar-height: 54px;
 $side-bar-logo-height: 96px;
 $side-bar-header-color:#1a202c;
-$side-bar-body-color:#2d3747;
+$side-bar-body-color:$accent;
+//$side-bar-body-color:#2d3747;
 // Body
 $body-bg: #edf2f6;
 $black: #000;

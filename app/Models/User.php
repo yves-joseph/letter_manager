@@ -4,6 +4,8 @@ namespace App\Models;
 
 use App\Http\Enumerations\Activated;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Http\UploadedFile;
@@ -93,4 +95,14 @@ class User extends Authenticatable
         return image_path($this->attributes['image_path'], "w=$$width&h=$$height&fit=12");
     }
 
+
+    public function service(): BelongsTo
+    {
+        return $this->belongsTo(Service::class,'service_id','id');
+    }
+
+    public function letters(): HasMany
+    {
+        return $this->hasMany(Letter::class, 'user_id', 'id');
+    }
 }
