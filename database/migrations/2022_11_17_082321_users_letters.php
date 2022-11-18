@@ -15,6 +15,8 @@ return new class extends Migration {
         Schema::create('users_letters', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('letter_id');
+            $table->boolean('is_read')
+                ->default(false);
         });
     }
 

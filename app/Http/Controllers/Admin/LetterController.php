@@ -42,8 +42,19 @@ class LetterController extends Controller
     public function index(): Factory|View|Application
     {
         Gate::authorize('granted', 'ROLE_LETTERS_MENU');
+
+
+        if (Gate::denies('granted', 'ROLE_LETTERS_SUPERVISOR')) {
+            $condition = ['user_id', '=', Auth::id()];
+            $__data = Auth::user()->letters;
+            foreach (Letter::query()->where([$condition])->latest()->get() as $item) {
+                $__data->add($item);
+            }
+        } else {
+            $__data = Letter::query()->latest()->get();
+        }
         return view($this->basePath . __FUNCTION__, [
-            'data' => (LetterResource::collection(Letter::query()->latest()->get()))->toJson(),
+            'data' => (LetterResource::collection($__data))->toJson(),
             'header' => json_encode(self::tableHeader()),
             'type' => __FUNCTION__
         ]);
@@ -85,8 +96,8 @@ class LetterController extends Controller
     public function create(): View|Factory|Application
     {
         Gate::authorize('granted', 'ROLE_LETTERS_CREATE');
-        return view($this->basePath . __FUNCTION__,[
-            'users'=>User::query()->where('id', '!=', Auth::id())->latest()->get()
+        return view($this->basePath . __FUNCTION__, [
+            'users' => User::query()->where('id', '!=', Auth::id())->latest()->get()
         ]);
     }
 
@@ -144,7 +155,7 @@ class LetterController extends Controller
         Gate::authorize('granted', 'ROLE_LETTERS_EDIT');
         return view($this->basePath . __FUNCTION__, [
             'letter' => $letter,
-            'users'=>User::query()->where('id', '!=', Auth::id())->latest()->get()
+            'users' => User::query()->where('id', '!=', Auth::id())->latest()->get()
         ]);
     }
 

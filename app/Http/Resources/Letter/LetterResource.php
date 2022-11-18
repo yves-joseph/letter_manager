@@ -7,6 +7,8 @@ use App\Http\Enumerations\LetterType;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 /**
  * @property string $subject
@@ -15,6 +17,7 @@ use Illuminate\Support\Carbon;
  * @property Carbon $receive_at
  * @property string $email
  * @property LetterType $type
+ * @property int $user_id
  * @property int $id
  */
 class LetterResource extends JsonResource
@@ -27,17 +30,20 @@ class LetterResource extends JsonResource
      */
     public function toArray($request): array
     {
+
+        $action["show"] = route('letters.show', ['letter' => $this->id]);
+
+        if ($this->user_id === Auth::id() || Gate::allows('granted', 'ROLE_LETTERS_SUPERVISOR')){
+            $action["edit"] = route('letters.edit', ['letter' => $this->id]);
+            $action["delete"] = route('letters.destroy', ['letter' => $this->id]);
+        }
         return [
             $this->sender_full_name,
             $this->recipient_full_name,
             $this->subject,
-            tr_html($this->type === LetterType::Send ? "<span class='icon-folder-upload' style='color: #018601;'></span>Envoyer" :"<span class='icon-folder-download' style='color: #ffc107;'></span>Réceptionner"),
+            tr_html($this->type === LetterType::Send ? "<span class='icon-folder-upload' style='color: #018601;'></span>Envoyer" : "<span class='icon-folder-download' style='color: #ffc107;'></span>Réceptionner"),
             $this->receive_at->format("d/m/Y"),
-            [
-                "show" => route('letters.show', ['letter' => $this->id]),
-                "edit" => route('letters.edit', ['letter' => $this->id]),
-                "delete" => route('letters.destroy', ['letter' => $this->id])
-            ]
+            $action
         ];
     }
 }

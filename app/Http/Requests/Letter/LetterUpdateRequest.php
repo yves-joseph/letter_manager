@@ -26,15 +26,13 @@ class LetterUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "user_id" => ['required', 'integer'],
-            "type" => ['required', 'max:255'],
             "subject" => ['required', 'string', Rule::unique('letters')],
             "sender_full_name" => ['required', 'max:255'],
             "recipient_full_name" => ['required', 'max:255'],
             "receive_at" => ['required'],
             "file_path" => ['nullable', 'mimes:pdf'],
             "detail" => ['nullable', 'string'],
-            'users' => ['nullable', 'array']
+            "users" => ['nullable', 'array']
         ];
     }
 
