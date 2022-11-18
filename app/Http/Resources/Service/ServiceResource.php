@@ -23,6 +23,7 @@ class ServiceResource extends JsonResource
     {
         return [
             $this->name,
+            tr_html("<strong>{$this->users->count()}</strong>"),
             [
                 "show" => route('services.show', ['service' => $this->id]),
                 "edit" => route('services.edit', ['service' => $this->id]),

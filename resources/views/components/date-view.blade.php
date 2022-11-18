@@ -10,6 +10,7 @@
     </div>
     <div class="col-12 col-md-6">
         <x-text
+            color="warning"
             label="Date de la dernière mise à jour"
             :content="$updated->format('d-m-Y')"></x-text>
     </div>

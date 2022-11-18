@@ -179,7 +179,11 @@ class ServiceController extends Controller
     {
         return [
             [
-                "name" => "service"
+                "name" => "Service"
+            ],
+            [
+                "name" => "Nombre d'utilisateur",
+                "width" => "172"
             ]
         ];
     }

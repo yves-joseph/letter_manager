@@ -13,10 +13,15 @@
                 svg="delete"></x-destroy>
         </x-slot:header>
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-8">
                 <x-text
                     label="Service"
                     :content="$service->name"></x-text>
+            </div>
+            <div class="col-12 col-md-4">
+                <x-text
+                    label="Nombre d'utilisateur du service"
+                    :content="$service->users->count()"></x-text>
             </div>
         </div>
     </x-display>
@@ -28,7 +33,7 @@
 @section('navigate')
     <x-navigate-bar>
         <x-navigate-bar-link
-            :url="route('users.index')"
+            :url="route('services.index')"
             label="Services"></x-navigate-bar-link>
         <x-navigate-bar-link
             :url="\Illuminate\Support\Facades\URL::current()"

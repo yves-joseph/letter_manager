@@ -4,7 +4,6 @@ export default function customSelect() {
     const selects = document.getElementsByClassName('____custom-select');
 
     for (let i = 0; i < selects.length; i++) {
-
         if (selects.item(i).nodeName === "SELECT")
             new TomSelect(selects.item(i), {
                 persist: false,

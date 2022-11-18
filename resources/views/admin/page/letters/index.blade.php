@@ -5,10 +5,15 @@
         @if($type!=='trash')
             <x-slot:header>
                 <x-a
-                    :href="route('letters.create')"
-                    svg="add"
+                    :href="route('letters.create').'?type=send'"
+                    svg="outbox"
                     type="success"
-                    label="AJOUTER"></x-a>
+                    label="ENVOYER"></x-a>
+                <x-a
+                    :href="route('letters.create').'?type=receive'"
+                    svg="move_to_inbox"
+                    type="warning"
+                    label="RÉCEPTIONNER"></x-a>
             </x-slot:header>
         @endif
     </x-index>

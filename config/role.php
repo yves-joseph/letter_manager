@@ -54,13 +54,13 @@ return [
                     "disabled" => false,
                 ],
                 [
-                    "label" => "role.authorize",
-                    "value" => "ROLE_USERS_AUTHORISATION",
+                    "label" => "role.trash",
+                    "value" => "ROLE_USERS_TRASH",
                     "disabled" => false,
                 ],
                 [
-                    "label" => "role.trash",
-                    "value" => "ROLE_USERS_TRASH",
+                    "label" => "role.supervisor",
+                    "value" => "ROLE_USERS_SUPERVISOR",
                     "disabled" => false,
                 ]
             ]
@@ -141,6 +141,11 @@ return [
                 [
                     "label" => "role.trash",
                     "value" => "ROLE_LETTERS_TRASH",
+                    "disabled" => false,
+                ],
+                [
+                    "label" => "role.supervisor",
+                    "value" => "ROLE_LETTERS_SUPERVISOR",
                     "disabled" => false,
                 ]
             ]

@@ -27,8 +27,6 @@ class LetterStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'firstname' => ['required', 'max:255'],
-            'lastname' => ['required', 'max:255'],
             "user_id" => ['required', 'integer'],
             "type" => ['required', 'max:255'],
             "subject" => ['required', 'string', Rule::unique('letters')->ignore('letter')],

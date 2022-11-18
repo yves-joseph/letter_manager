@@ -6,5 +6,6 @@ return [
     "edit" => "Edition",
     "delete" => "Suppression",
     "authorize" => "Autorisation",
-    "trash" => "Corbeille"
+    "trash" => "Corbeille",
+    "supervisor" => "Superviseur",
 ];

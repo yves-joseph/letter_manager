@@ -23,6 +23,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 
 /**
@@ -84,7 +85,9 @@ class LetterController extends Controller
     public function create(): View|Factory|Application
     {
         Gate::authorize('granted', 'ROLE_LETTERS_CREATE');
-        return view($this->basePath . __FUNCTION__);
+        return view($this->basePath . __FUNCTION__,[
+            'users'=>User::query()->where('id', '!=', Auth::id())->latest()->get()
+        ]);
     }
 
 
@@ -126,7 +129,7 @@ class LetterController extends Controller
     {
         Gate::authorize('granted', 'ROLE_LETTERS_SHOW');
         return view($this->basePath . __FUNCTION__, [
-            'letter' => $letter
+            'letter' => $letter->load('users')
         ]);
     }
 
@@ -140,7 +143,8 @@ class LetterController extends Controller
     {
         Gate::authorize('granted', 'ROLE_LETTERS_EDIT');
         return view($this->basePath . __FUNCTION__, [
-            'letter' => $letter
+            'letter' => $letter,
+            'users'=>User::query()->where('id', '!=', Auth::id())->latest()->get()
         ]);
     }
 
@@ -210,6 +214,9 @@ class LetterController extends Controller
             ],
             [
                 "name" => "Status"
+            ],
+            [
+                "name" => "Date"
             ]
         ];
     }

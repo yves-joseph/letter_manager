@@ -65,7 +65,7 @@
                     :value="old('phone') ?? $user->phone"></x-input>
             </div>
         </div>
-        @granted('ROLE_USERS_AUTHORISATION')
+        @granted('ROLE_USERS_SUPERVISOR')
         <div class="row">
             <div class="col-12">
                 <div class="kh-input-custom">

@@ -102,7 +102,7 @@
 
                     &.active {
                         border-radius: 4px;
-                        background-color: rgba($white, 0.1);
+                        background-color: rgba($white, 0.2);
 
                         .kh-app-side-bar-link-icon {
                             color: rgba($side-bar-hint-color, 0.8);
@@ -172,7 +172,7 @@
                     cursor: not-allowed;
 
                     &.active {
-                        background-color: rgba($white, 0.1);
+                        background-color: rgba($white, 0.4);
 
                         .kh-app-side-bar-link-icon {
                             color: rgba($side-bar-hint-color, 0.8);

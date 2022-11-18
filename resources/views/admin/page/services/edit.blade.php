@@ -22,7 +22,7 @@
 @section('navigate')
     <x-navigate-bar>
         <x-navigate-bar-link
-            :url="route('users.index')"
+            :url="route('services.index')"
             label="Services"></x-navigate-bar-link>
         <x-navigate-bar-link
             :url="\Illuminate\Support\Facades\URL::current()"

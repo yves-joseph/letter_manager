@@ -132,6 +132,28 @@
     }
   }
 
+    &.white {
+        a, button {
+            color: rgba($primary, 0.8);
+            background-color: $white !important;
+            border: 1px solid $white !important;
+
+            &:disabled {
+                color: rgba($primary, 0.5);
+            }
+
+            &:hover {
+                color: $primary;
+                svg {
+                    fill: rgba($primary, 1.0);
+                }
+            }
+            svg {
+                fill: rgba($primary, 0.8);
+            }
+        }
+    }
+
   &.accent {
     a, button {
       color: rgba($white, 0.8);
@@ -165,7 +187,7 @@
     padding: 8px 24px;
     background-color: $white;
     border: 1px solid $gray-200;
-    border-radius: 2px;
+    border-radius: 4px;
     color: $black;
     text-decoration: none;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.18);

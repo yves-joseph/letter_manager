@@ -1,7 +1,7 @@
 <?php
 return [
     [
-        "icon" => "home",
+        "icon" => "dashboard",
         "title" => "menu.home",
         "title_small" => "menu.home",
         "path" => "user_home",
@@ -10,7 +10,7 @@ return [
         "hr" => true
     ],
     [
-        "icon" => "admin_panel_settings",
+        "icon" => "supervised_user_circle",
         "title" => "menu.users",
         "title_small" => "menu.users",
         "path" => "users",

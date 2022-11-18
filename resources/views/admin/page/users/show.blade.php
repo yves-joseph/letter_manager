@@ -50,7 +50,7 @@
                     :content="$user->phone"></x-text>
             </div>
         </div>
-        @granted('ROLE_USERS_AUTHORISATION')
+        @granted('ROLE_USERS_SUPERVISOR')
         <fieldset disabled class="row" style="margin-top: 8px">
             <div class="col-12">
                 <div class="kh-input-custom">

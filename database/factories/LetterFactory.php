@@ -25,15 +25,15 @@ class LetterFactory extends Factory
         return [
             "user_id" => 1,
             "type" => fake()->randomElement(['receive', 'send']),
-            "subject" => fake()->title(),
-            "sender_full_name" => fake()->lastName() . ' ' . fake()->lastName(),
-            "recipient_full_name" => fake()->lastName() . ' ' . fake()->lastName(),
+            "subject" => fake()->paragraph(nbSentences: 2),
+            "sender_full_name" => fake()->lastName() . ' ' . fake()->firstName(),
+            "recipient_full_name" => fake()->lastName() . ' ' . fake()->firstName(),
             "receive_at" => Carbon::now(),
             "file_path" => fake()->randomElement([
                 "letters/letter1.pdf",
                 "letters/letter2.pdf"
             ]),
-            "detail" => fake()->paragraph()
+            "detail" => fake()->paragraph(nbSentences: 8)
         ];
     }
 }

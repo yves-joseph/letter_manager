@@ -8,14 +8,14 @@
             <span></span>
         </button>
     </div>
-    {{-- <div id="kh-app-body-nav-bar-search-view">
+     <div id="kh-app-body-nav-bar-search-view">
         <input type="search" id="global_search" placeholder="Recherche...">
         <label for="global_search" class="icon-search"></label>
-        <div id="kh-app-body-nav-bar-search-view-content">
-            {% for i in 'A'..'Z' %}
-            <a href="#" style="display: none" class="kh-app-body-nav-bar-search-view-content-item" data-name="{{ i }}" data-matricule="4{{ i }}2{{ i }}451">
+       {{-- <div id="kh-app-body-nav-bar-search-view-content">
+            @for($i=1;$i<10;$i++)
+            <a href="#" style="display: none" class="kh-app-body-nav-bar-search-view-content-item" data-name="{{ $i }}" data-matricule="4{{ $i }}2{{ $i }}451">
                 <div class="kh-app-body-nav-bar-search-view-content-item-value">
-                    Lorem ipsum dolor sit amet, adipisicing elit {{ i }}.
+                    Lorem ipsum dolor sit amet, adipisicing elit {{ $i }}.
                 </div>
                 <div class="kh-app-body-nav-bar-search-view-content-item-value">
                     <span class="icon-cart"></span>
@@ -24,9 +24,9 @@
                     <a href="#" class="icon-tree"></a>
                 </div>
             </a>
-            {% endfor %}
-        </div>
-    </div>--}}
+            @endfor
+        </div>--}}
+    </div>
     <div class="kh-app-body-nav-bar-item">
         <div class="kh-app-body-nav-bar-item-img" id="kh-app-body-nav-bar-item-btn">
             <x-image-profile
