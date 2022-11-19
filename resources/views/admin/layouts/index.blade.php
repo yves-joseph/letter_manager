@@ -16,7 +16,7 @@
                 @include('admin.layouts.message.welcome')
                 @include('admin.layouts.message.notice')
                 @include('admin.layouts.message.offline')
-                @if(\Illuminate\Support\Facades\Session::has('not_production'))
+                @if(Session::has('not_production'))
                     <div id="not_production">
                         <div id="not_production_content">
                             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
@@ -77,6 +77,10 @@
                             </h6>
                         </div>
                     </div>
+
+                    @php
+                        Session::remove('not_production')
+                    @endphp
                 @endif
             </div>
         </div>
