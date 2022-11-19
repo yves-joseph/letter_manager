@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Service;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class ServiceUpdateRequest extends FormRequest
 {
@@ -24,7 +25,7 @@ class ServiceUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'max:255']
+            'name' => ['required', 'max:255', Rule::unique('services')->ignore($this->route('service')->id)]
         ];
     }
 

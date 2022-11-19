@@ -26,7 +26,7 @@ class LetterUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "subject" => ['required', 'string', Rule::unique('letters')],
+            "subject" => ['required', 'string', Rule::unique('letters')->ignore($this->route('letter')->id)],
             "sender_full_name" => ['required', 'max:255'],
             "recipient_full_name" => ['required', 'max:255'],
             "receive_at" => ['required'],

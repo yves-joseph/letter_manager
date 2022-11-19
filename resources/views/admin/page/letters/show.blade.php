@@ -17,7 +17,7 @@
             @endif
         </x-slot:header>
 
-        <x-text label="Transférer la lettre à:">
+        <x-text label="Lettre Transférée à:">
             @if(!$letter->users->isEmpty())
                 <ol style="display: flex;list-style: none;">
                     @foreach($letter->users as $user)

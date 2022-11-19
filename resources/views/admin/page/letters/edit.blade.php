@@ -81,7 +81,7 @@
                 <x-text label="Transférer la lettre à:">
                     @if(!$users->isEmpty())
                         <x-select
-                            name="users"
+                            name="users[]"
                             search="true"
                             placeholder="Veuillez sélectionner les destinataires"
                             multiple="true"

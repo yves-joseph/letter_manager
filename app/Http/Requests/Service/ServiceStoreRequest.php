@@ -2,10 +2,8 @@
 
 namespace App\Http\Requests\Service;
 
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rules;
+use Illuminate\Validation\Rule;
 
 class ServiceStoreRequest extends FormRequest
 {
@@ -27,7 +25,7 @@ class ServiceStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'max:255']
+            'name' => ['required', 'max:255',Rule::unique('services')]
         ];
     }
 

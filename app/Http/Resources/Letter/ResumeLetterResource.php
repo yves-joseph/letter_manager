@@ -2,13 +2,10 @@
 
 namespace App\Http\Resources\Letter;
 
-use App\Http\Enumerations\Activated;
 use App\Http\Enumerations\LetterType;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Str;
 
 /**

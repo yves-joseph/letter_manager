@@ -237,6 +237,9 @@ class LetterController extends Controller
                 "name" => "Status"
             ],
             [
+                "name" => "Transférer"
+            ],
+            [
                 "name" => "Date"
             ]
         ];

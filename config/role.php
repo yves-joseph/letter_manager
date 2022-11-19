@@ -14,8 +14,18 @@ return [
                     "disabled" => false
                 ],
                 [
-                    "label" => "role.show",
-                    "value" => "ROLE_DASHBOARD_SHOW",
+                    "label" => "Information utilisateur",
+                    "value" => "ROLE_DASHBOARD_USERS_SHOW",
+                    "disabled" => false
+                ],
+                [
+                    "label" => "Information service",
+                    "value" => "ROLE_DASHBOARD_SERVICES_SHOW",
+                    "disabled" => false
+                ],
+                [
+                    "label" => "Information lettre",
+                    "value" => "ROLE_DASHBOARD_LETTERS_SHOW",
                     "disabled" => false
                 ]
             ]
