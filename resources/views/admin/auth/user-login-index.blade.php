@@ -7,16 +7,16 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @vite(['resources/js/login.js','resources/scss/admin/login.scss'])
 
-    {{--<link rel="icon" type="image/x-icon" href="{{ asset('storage/system/logo/logo.png') }}"> --}}
+    <link rel="icon" sizes="32x32" href="{{ asset('favicon') }}">
     <meta name="theme-color" content="#fd7400"/>
 </head>
 <body>
 <div id="login">
-    <div class="login-item-view" style="background:url({{ asset('storage/system/login.jpg') }})">
+    <div class="login-item-view" style="background:url({{ asset('storage/system/login-green.svg') }}) no-repeat center center,linear-gradient(#f8f9fa,#f8f9fa);background-size: 70% 70%">
         <div id="login-item-view-about" >
             <h3>{{ config('app.name') }}</h3>
             <p>
-                Panneau d'administration du site web {{ config('app.name') }}
+               Logiciel de gestion intégrer des lettres manuscrites
             </p>
         </div>
     </div>
