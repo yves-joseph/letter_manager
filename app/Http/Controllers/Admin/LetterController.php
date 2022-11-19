@@ -44,6 +44,8 @@ class LetterController extends Controller
         Gate::authorize('granted', 'ROLE_LETTERS_MENU');
 
 
+        //  dd(Auth::user()->letters);
+
         if (Gate::denies('granted', 'ROLE_LETTERS_SUPERVISOR')) {
             $condition = ['user_id', '=', Auth::id()];
             $__data = Auth::user()->letters;
@@ -53,6 +55,7 @@ class LetterController extends Controller
         } else {
             $__data = Letter::query()->latest()->get();
         }
+        //  dd($__data);
         return view($this->basePath . __FUNCTION__, [
             'data' => (LetterResource::collection($__data))->toJson(),
             'header' => json_encode(self::tableHeader()),
@@ -139,6 +142,13 @@ class LetterController extends Controller
     public function show(Letter $letter): View|Factory|Application
     {
         Gate::authorize('granted', 'ROLE_LETTERS_SHOW');
+
+        if (!$letter->users()->where('user_id', Auth::id())->first()?->pivot->is_read) {
+            $letter->users()->updateExistingPivot(Auth::id(), [
+                'is_read' => true
+            ]);
+        }
+
         return view($this->basePath . __FUNCTION__, [
             'letter' => $letter->load('users')
         ]);
@@ -231,4 +241,7 @@ class LetterController extends Controller
             ]
         ];
     }
+
+
+
 }

@@ -8,10 +8,10 @@
             <span></span>
         </button>
     </div>
-     <div id="kh-app-body-nav-bar-search-view">
+    {{-- <div id="kh-app-body-nav-bar-search-view">
         <input type="search" id="global_search" placeholder="Recherche...">
         <label for="global_search" class="icon-search"></label>
-       {{-- <div id="kh-app-body-nav-bar-search-view-content">
+        <div id="kh-app-body-nav-bar-search-view-content">
             @for($i=1;$i<10;$i++)
             <a href="#" style="display: none" class="kh-app-body-nav-bar-search-view-content-item" data-name="{{ $i }}" data-matricule="4{{ $i }}2{{ $i }}451">
                 <div class="kh-app-body-nav-bar-search-view-content-item-value">
@@ -25,8 +25,8 @@
                 </div>
             </a>
             @endfor
-        </div>--}}
-    </div>
+        </div>
+    </div>--}}
     <div class="kh-app-body-nav-bar-item">
         <div class="kh-app-body-nav-bar-item-img" id="kh-app-body-nav-bar-item-btn">
             <x-image-profile

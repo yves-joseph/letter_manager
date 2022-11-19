@@ -3,18 +3,20 @@
 @section('main')
     <x-index :columns="$header" :data="$data" :empty="$type==='trash' ? 'Corbeille vide':'Aucune lettre trouvée'">
         @if($type!=='trash')
-            <x-slot:header>
-                <x-a
-                    :href="route('letters.create').'?type=send'"
-                    svg="outbox"
-                    type="success"
-                    label="ENVOYER"></x-a>
-                <x-a
-                    :href="route('letters.create').'?type=receive'"
-                    svg="move_to_inbox"
-                    type="warning"
-                    label="RÉCEPTIONNER"></x-a>
-            </x-slot:header>
+            @if(\Illuminate\Support\Facades\Gate::allows('granted', 'ROLE_LETTERS_TRASH'))
+                <x-slot:header>
+                    <x-a
+                        :href="route('letters.create').'?type=send'"
+                        svg="outbox"
+                        type="success"
+                        label="ENVOYER"></x-a>
+                    <x-a
+                        :href="route('letters.create').'?type=receive'"
+                        svg="move_to_inbox"
+                        type="warning"
+                        label="RÉCEPTIONNER"></x-a>
+                </x-slot:header>
+            @endif
         @endif
     </x-index>
 @endsection
@@ -35,11 +37,13 @@
                 :url="\Illuminate\Support\Facades\URL::current()"
                 label="Corbeille"></x-navigate-bar-link>
         @else
-            <x-slot:right>
-                <a href="{{ route('letters.trash') }}">
-                    <x-icon name="delete"></x-icon>
-                </a>
-            </x-slot:right>
+            @if(\Illuminate\Support\Facades\Gate::allows('granted', 'ROLE_LETTERS_TRASH'))
+                <x-slot:right>
+                    <a href="{{ route('letters.trash') }}">
+                        <x-icon name="delete"></x-icon>
+                    </a>
+                </x-slot:right>
+            @endif
         @endif
     </x-navigate-bar>
 @endsection

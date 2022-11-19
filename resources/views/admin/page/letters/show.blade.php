@@ -3,14 +3,18 @@
 @section('main')
     <x-display>
         <x-slot:header>
-            <x-a :href="route('letters.edit',['letter'=>$letter->id])"
-                 svg="edit"
-                 type="warning"
-                 label="Editer"></x-a>
-            <x-destroy
-                label="Supprimer"
-                :url="route('letters.destroy',['letter'=>$letter->id])"
-                svg="delete"></x-destroy>
+            @if(\Illuminate\Support\Facades\Gate::allows('granted', 'ROLE_LETTERS_EDIT'))
+                <x-a :href="route('letters.edit',['letter'=>$letter->id])"
+                     svg="edit"
+                     type="warning"
+                     label="Editer"></x-a>
+            @endif
+            @if(\Illuminate\Support\Facades\Gate::allows('granted', 'ROLE_LETTERS_DESTROY'))
+                <x-destroy
+                    label="Supprimer"
+                    :url="route('letters.destroy',['letter'=>$letter->id])"
+                    svg="delete"></x-destroy>
+            @endif
         </x-slot:header>
 
         <x-text label="Transférer la lettre à:">

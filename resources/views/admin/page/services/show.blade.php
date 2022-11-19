@@ -3,14 +3,18 @@
 @section('main')
     <x-display>
         <x-slot:header>
-            <x-a :href="route('services.edit',['service'=>$service->id])"
-                 svg="edit"
-                 type="warning"
-                 label="Editer"></x-a>
-            <x-destroy
-                label="Supprimer"
-                :url="route('services.destroy',['service'=>$service->id])"
-                svg="delete"></x-destroy>
+            @if(\Illuminate\Support\Facades\Gate::allows('granted', 'ROLE_SERVICES_EDIT'))
+                <x-a :href="route('services.edit',['service'=>$service->id])"
+                     svg="edit"
+                     type="warning"
+                     label="Editer"></x-a>
+            @endif
+            @if(\Illuminate\Support\Facades\Gate::allows('granted', 'ROLE_SERVICES_DESTROY'))
+                <x-destroy
+                    label="Supprimer"
+                    :url="route('services.destroy',['service'=>$service->id])"
+                    svg="delete"></x-destroy>
+            @endif
         </x-slot:header>
         <div class="row">
             <div class="col-12 col-md-8">

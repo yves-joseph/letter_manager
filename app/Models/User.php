@@ -104,6 +104,6 @@ class User extends Authenticatable
 
     public function letters(): BelongsToMany
     {
-        return $this->belongsToMany(Letter::class, 'users_letters', 'user_id','letter_id');
+        return $this->belongsToMany(Letter::class, 'users_letters', 'user_id','letter_id')->withPivot('is_read');
     }
 }

@@ -23,6 +23,7 @@ class ServiceTrashResource extends JsonResource
     {
         return [
             $this->name,
+            tr_html("<strong>{$this->users->count()}</strong>"),
             [
                 "show" => route('services.restore', ['service' => $this->id])
             ]

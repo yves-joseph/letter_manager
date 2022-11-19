@@ -1,0 +1,23 @@
+.resume_view{
+    text-align: center;
+
+    .resume_view-icon{
+        background: linear-gradient($accent,$green-500,$green-300);
+        display: inline-block;
+        padding: 12px;
+        border-radius: 50%;
+        margin-bottom: 16px;
+        svg{
+            width: 48px;
+            height: 48px;
+            fill: $white;
+        }
+    }
+    p{
+        font-weight: 600;
+        &:first-letter{
+            text-transform: uppercase;
+        }
+    }
+
+}

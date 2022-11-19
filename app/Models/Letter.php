@@ -57,7 +57,7 @@ class Letter extends Model
 
     public function users(): BelongsToMany
     {
-        return $this->belongsToMany(User::class, 'users_letters', 'letter_id', 'user_id');
+        return $this->belongsToMany(User::class, 'users_letters', 'letter_id', 'user_id')->withPivot('is_read');
     }
 
     public function supervisor(): BelongsTo

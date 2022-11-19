@@ -46,7 +46,7 @@ class ServiceFactory extends Factory
                 ]
             ]);
 
-            User::factory()->create([
+            $admin = User::factory()->create([
                 'service_id' => $service->id,
                 'email' => 'yjk@outlook.fr',
                 'activated' => 1,
@@ -91,7 +91,10 @@ class ServiceFactory extends Factory
             ]);
 
             Letter::factory(10)->create([
-                'user_id' => $secretary->id
+                'user_id' => (int)fake()->randomElement([
+                    (string)$secretary->id,
+                    (string)$admin->id
+                ])
             ]);
         });
     }

@@ -79,7 +79,8 @@ export default class TableView {
                     return item;
                 }),
                 pagination: {
-                    limit: this.target.dataset.paginate
+                    limit: this.target.dataset.paginate,
+                    enabled: this.target.dataset.paginate !== '5'
                 },
                 autoWidth: false,
                 sort: true,

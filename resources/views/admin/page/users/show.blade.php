@@ -3,14 +3,18 @@
 @section('main')
     <x-display>
         <x-slot:header>
+            @if(\Illuminate\Support\Facades\Gate::allows('granted', 'ROLE_USERS_EDIT'))
             <x-a :href="route('users.edit',['user'=>$user->id])"
                  svg="edit"
                  type="warning"
                  label="Editer"></x-a>
-            <x-destroy
-                label="Supprimer"
-                :url="route('users.destroy',['user'=>$user->id])"
-                svg="delete"></x-destroy>
+            @endif
+            @if(\Illuminate\Support\Facades\Gate::allows('granted', 'ROLE_USERS_DESTROY'))
+                <x-destroy
+                    label="Supprimer"
+                    :url="route('users.destroy',['user'=>$user->id])"
+                    svg="delete"></x-destroy>
+            @endif
         </x-slot:header>
         <div class="row" style="margin-bottom: 8px">
             <div class="col-auto">
@@ -75,6 +79,32 @@
             </div>
         </fieldset>
         @endgranted
+
+        <div class="row">
+            <div class="col-12">
+                <x-text
+                    label="Lettres réceptionnée">
+                    <table class="table">
+                        <tr>
+                            <th>Expéditeur</th>
+                            <th>Objet de la lettre</th>
+                            <th>Date</th>
+                        </tr>
+                        @foreach($user->letters as $letter)
+                            <tr>
+                                <td>{{ $letter->sender_full_name }}</td>
+                                <td>
+                                    <a target="_blank" href="{{ route('letters.show',['letter'=>$letter->id]) }}">
+                                        {{ $letter->subject }}
+                                    </a>
+                                </td>
+                                <td>{{ $letter->receive_at->format('d/m/Y') }}</td>
+                            </tr>
+                        @endforeach
+                    </table>
+                </x-text>
+            </div>
+        </div>
     </x-display>
 @endsection
 
