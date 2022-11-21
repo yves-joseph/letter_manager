@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @vite(['resources/js/login.js','resources/scss/admin/login.scss'])
 
-    <link rel="icon" sizes="32x32" href="{{ asset('favicon') }}">
+    <link rel="icon" sizes="32x32" href="{{ asset('favicon.ico') }}">
     <meta name="theme-color" content="#fd7400"/>
 </head>
 <body>

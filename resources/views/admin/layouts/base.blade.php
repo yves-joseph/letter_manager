@@ -8,7 +8,7 @@
     <title>{{ config('app.name', 'TAM') }} | @yield('title')</title>
 
     <meta name="theme-color" content="#f19220"/>
-    <link rel="icon" sizes="32x32" href="{{ asset('favicon') }}">
+    <link rel="icon" sizes="32x32" href="{{ asset('favicon.ico') }}">
 
 {{--    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
