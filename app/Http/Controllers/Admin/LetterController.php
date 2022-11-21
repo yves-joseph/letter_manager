@@ -49,9 +49,11 @@ class LetterController extends Controller
         if (Gate::denies('granted', 'ROLE_LETTERS_SUPERVISOR')) {
             $condition = ['user_id', '=', Auth::id()];
             $__data = Auth::user()->letters;
+
             foreach (Letter::query()->where([$condition])->latest()->get() as $item) {
                 $__data->add($item);
             }
+
         } else {
             $__data = Letter::query()->latest()->get();
         }

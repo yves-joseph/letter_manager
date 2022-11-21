@@ -3,11 +3,11 @@
 @section('main')
     <x-display>
         <x-slot:header>
-            @if(\Illuminate\Support\Facades\Gate::allows('granted', 'ROLE_USERS_EDIT'))
-            <x-a :href="route('users.edit',['user'=>$user->id])"
-                 svg="edit"
-                 type="warning"
-                 label="Editer"></x-a>
+            @if(\Illuminate\Support\Facades\Gate::allows('granted', 'ROLE_USERS_EDIT') || $user->id === \Illuminate\Support\Facades\Auth::id())
+                <x-a :href="route('users.edit',['user'=>$user->id])"
+                     svg="edit"
+                     type="warning"
+                     label="Editer"></x-a>
             @endif
             @if(\Illuminate\Support\Facades\Gate::allows('granted', 'ROLE_USERS_DESTROY'))
                 <x-destroy
@@ -80,31 +80,33 @@
         </fieldset>
         @endgranted
 
-        <div class="row">
-            <div class="col-12">
-                <x-text
-                    label="Lettres réceptionnée">
-                    <table class="table">
-                        <tr>
-                            <th>Expéditeur</th>
-                            <th>Objet de la lettre</th>
-                            <th>Date</th>
-                        </tr>
-                        @foreach($user->letters as $letter)
+        @if(!$user->letters->isEmpty())
+            <div class="row">
+                <div class="col-12">
+                    <x-text
+                        label="Lettres réceptionnée">
+                        <table class="table">
                             <tr>
-                                <td>{{ $letter->sender_full_name }}</td>
-                                <td>
-                                    <a target="_blank" href="{{ route('letters.show',['letter'=>$letter->id]) }}">
-                                        {{ $letter->subject }}
-                                    </a>
-                                </td>
-                                <td>{{ $letter->receive_at->format('d/m/Y') }}</td>
+                                <th>Expéditeur</th>
+                                <th>Objet de la lettre</th>
+                                <th>Date</th>
                             </tr>
-                        @endforeach
-                    </table>
-                </x-text>
+                            @foreach($user->letters as $letter)
+                                <tr>
+                                    <td>{{ $letter->sender_full_name }}</td>
+                                    <td>
+                                        <a target="_blank" href="{{ route('letters.show',['letter'=>$letter->id]) }}">
+                                            {{ $letter->subject }}
+                                        </a>
+                                    </td>
+                                    <td>{{ $letter->receive_at->format('d/m/Y') }}</td>
+                                </tr>
+                            @endforeach
+                        </table>
+                    </x-text>
+                </div>
             </div>
-        </div>
+        @endif
     </x-display>
 @endsection
 
@@ -113,9 +115,11 @@
 @endsection
 @section('navigate')
     <x-navigate-bar>
+        @if(\Illuminate\Support\Facades\Gate::allows('granted', 'ROLE_USERS_SHOW'))
         <x-navigate-bar-link
             :url="route('users.index')"
             label="Utilisateurs"></x-navigate-bar-link>
+        @endif
         <x-navigate-bar-link
             :url="\Illuminate\Support\Facades\URL::current()"
             :label="$user->lastname.' '.$user->firstname"></x-navigate-bar-link>

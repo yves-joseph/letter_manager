@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Enumerations\LetterType;
 use App\Http\Resources\Letter\ResumeLetterResource;
 use App\Models\Letter;
+use App\Models\User;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -23,8 +24,15 @@ class DashboardController extends Controller
         $_readOrNotRead['send'] = 0;
         $_readOrNotRead['receive'] = 0;
         if (Gate::denies('granted', 'ROLE_LETTERS_SUPERVISOR')) {
+            /**
+             * @var $user User
+             */
+            $user = Auth::user();
             $condition = ['user_id', '=', Auth::id()];
-            $__data = Letter::query()->where([$condition])->latest()->get();
+            $__data = $user->letters;
+            foreach (Letter::query()->where([$condition])->latest()->get() as $item) {
+                $__data->add($item);
+            }
         } else {
             $__data = Letter::query()->latest()->get();
         }
@@ -40,7 +48,7 @@ class DashboardController extends Controller
                 } else {
                     $_readOrNotRead['not_read'] += 1;
                 }
-            }
+            } else $_readOrNotRead['receive'] += 1;
         }
         return view($this->basePath . __FUNCTION__, [
             'state' => $this->letterStatisticData($_readOrNotRead),

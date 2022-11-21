@@ -36,4 +36,7 @@ class LetterFactory extends Factory
             "detail" => fake()->paragraph(nbSentences: 8)
         ];
     }
+
+
+
 }

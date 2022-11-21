@@ -25,9 +25,11 @@
 @endsection
 @section('navigate')
     <x-navigate-bar>
-        <x-navigate-bar-link
-            :url="route('users.index')"
-            label="Utilisateurs"></x-navigate-bar-link>
+        @if(\Illuminate\Support\Facades\Gate::allows('granted', 'ROLE_USERS_SHOW'))
+            <x-navigate-bar-link
+                :url="route('users.index')"
+                label="Utilisateurs"></x-navigate-bar-link>
+        @endif
         <x-navigate-bar-link
             :url="route('users.edit',['user'=>$user->id])"
             :label="$user->lastname.' '.$user->firstname"></x-navigate-bar-link>

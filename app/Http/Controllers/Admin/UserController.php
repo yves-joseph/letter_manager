@@ -114,7 +114,9 @@ class UserController extends Controller
      */
     public function show(User $user): View|Factory|Application
     {
-        Gate::authorize('granted', 'ROLE_USERS_SHOW');
+        if ($user->id !== Auth::id()) {
+            Gate::authorize('granted', 'ROLE_USERS_SHOW');
+        }
         return view($this->basePath . __FUNCTION__, [
             'user' => $user
         ]);
@@ -128,7 +130,9 @@ class UserController extends Controller
      */
     public function edit(User $user): Factory|View|Application
     {
-        Gate::authorize('granted', 'ROLE_USERS_EDIT');
+        if ($user->id !== Auth::id()) {
+            Gate::authorize('granted', 'ROLE_USERS_EDIT');
+        }
         return view($this->basePath . __FUNCTION__, [
             'user' => $user
         ]);
@@ -143,7 +147,9 @@ class UserController extends Controller
      */
     public function update(UserUpdateRequest $request, User $user): RedirectResponse
     {
-        Gate::authorize('granted', 'ROLE_USERS_EDIT');
+        if ($user->id !== Auth::id()) {
+            Gate::authorize('granted', 'ROLE_USERS_EDIT');
+        }
         if ($user->update($request->validated())) {
             session()->flash(Notice::SUCCESS->name, Notice::SUCCESS->value);
         } else session()->flash(Notice::ERROR->name, Notice::ERROR->value);
@@ -177,6 +183,9 @@ class UserController extends Controller
 
     public function passwordResetForm(User $user): Factory|View|Application
     {
+        if ($user->id !== Auth::id()) {
+            Gate::authorize('granted', 'ROLE_USERS_EDIT');
+        }
         return view($this->basePath . 'password-reset', [
             'user' => $user
         ]);
@@ -184,6 +193,9 @@ class UserController extends Controller
 
     public function passwordReset(UserPasswordUpdateRequest $passwordUpdateRequest, User $user): RedirectResponse
     {
+        if ($user->id !== Auth::id()) {
+            Gate::authorize('granted', 'ROLE_USERS_EDIT');
+        }
         $user->update($passwordUpdateRequest->validated());
         return redirect()->back();
     }

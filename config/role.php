@@ -14,6 +14,12 @@ return [
                     "disabled" => false
                 ],
                 [
+                    "label" => "role.show",
+                    "value" => "ROLE_DASHBOARD_SHOW",
+                    "disabled" => false
+                ],
+
+                [
                     "label" => "Information utilisateur",
                     "value" => "ROLE_DASHBOARD_USERS_SHOW",
                     "disabled" => false
