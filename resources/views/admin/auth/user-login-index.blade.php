@@ -15,6 +15,7 @@
     <div class="login-item-view" style="background:url({{ asset('storage/system/login-green.svg') }}) no-repeat center center,linear-gradient(#f8f9fa,#f8f9fa);background-size: 70% 70%">
         <div id="login-item-view-about" >
             <h3>{{ config('app.name') }}</h3>
+
             <p>
                Logiciel de gestion intégrer des lettres manuscrites
             </p>
