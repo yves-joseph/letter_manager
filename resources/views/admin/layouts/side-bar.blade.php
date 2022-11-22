@@ -8,10 +8,10 @@
                     width="45"
                     height="45"
                     decoding="async"
-                    alt="{{ config('app.name', 'TAM') }}">
+                    alt="{{ config('app.name', 'LGILM') }}">
             </div>
             <strong>
-                {{ config('app.name', 'TAM') }}
+                {{ config('app.name', 'LGILM') }}
             </strong>
         </div>
     </header>
