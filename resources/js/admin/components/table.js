@@ -141,7 +141,11 @@ export default class TableView {
         _alert.setMessage = document.getElementById("table-wrapper").dataset.message ?? "Voulez-vous vraiment supprimer cette donnée ?";
         _alert.show().then(resp => {
             if (resp) {
-                e.target.submit();
+                let form = e.target.parentElement.parentElement.parentElement.parentElement;
+                if (form.nodeName !== "FORM") {
+                    form = form.parentElement;
+                }
+                form.submit();
             }
         });
 
