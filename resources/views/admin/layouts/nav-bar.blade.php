@@ -31,7 +31,7 @@
         <div class="kh-app-body-nav-bar-item-img" id="kh-app-body-nav-bar-item-btn">
             <x-image-profile
                 :name="Auth::user()->lastname.' '.Auth::user()->firstname"
-                :url="Auth::user()->image->url ?? null"
+                :url="Auth::user()->image_path ?? null"
                 rounded="rounded"
                 width="42px"
                 fontSize="0.8rem"
