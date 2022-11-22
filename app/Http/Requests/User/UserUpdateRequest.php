@@ -38,7 +38,7 @@ class UserUpdateRequest extends FormRequest
             ],
             'role' => ['required', 'array'],
             'activated' => ['required', 'boolean'],
-            'image_id' => ['nullable', 'integer']
+            'image_path' => ['nullable','image']
         ];
     }
 
