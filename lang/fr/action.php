@@ -13,7 +13,7 @@ return[
     'research'=>'Recherche',
     'end'=>'Terminer',
     'off'=>'Inactif',
-    "on"=>'actif',
-    'not_defined'=>"non défini"
+    "on"=>'Actif',
+    'not_defined'=>"Non défini"
 
 ];

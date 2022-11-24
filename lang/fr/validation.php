@@ -178,6 +178,9 @@ return [
         'available' => 'disponible',
         'size' => 'taille',
         'activated' => 'statut',
-        'image_id' => 'image'
+        'image_id' => 'image',
+        'service_id' => 'Service',
+        'subject' => 'Objet du courrier',
+        'ref' => 'Référence du courrier',
     ],
 ];

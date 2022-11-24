@@ -66,13 +66,6 @@ class User extends Authenticatable
         $this->attributes['role'] = json_encode(array_unique($permission));
     }
 
-    public function setImageIdAttribute($imageId)
-    {
-        if (!$imageId) return;
-        $this->attributes['image_id'] = (int)$imageId;
-    }
-
-
     public function setImagePathAttribute($imagePath)
     {
         if (!$imagePath) return;

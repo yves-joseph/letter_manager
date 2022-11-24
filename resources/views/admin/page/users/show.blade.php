@@ -31,6 +31,13 @@
             </div>
         </div>
         <div class="row">
+            <div class="col-12 col-md-4">
+                <x-text
+                    label="Service"
+                    :content="$user->service->name"></x-text>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-12 col-md-6">
                 <x-text
                     label="Nom"

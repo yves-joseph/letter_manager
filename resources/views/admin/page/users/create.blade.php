@@ -66,6 +66,19 @@
         </div>
         <div class="row">
             <div class="col-12">
+                <x-select
+                    name="service_id"
+                    search="true"
+                    placeholder="Veuillez sélectionner le service"
+                    label="Service">
+                    @foreach($services as $service)
+                        <option value="{{ $service->id }}">{{ $service->name }}</option>
+                    @endforeach
+                </x-select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
                 <div class="kh-input-custom">
                     <div style="margin: 8px 0;overflow: hidden;">
                         <div class="row">

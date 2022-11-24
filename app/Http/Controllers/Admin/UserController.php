@@ -17,6 +17,7 @@ use App\Http\Requests\User\UserStoreRequest;
 use App\Http\Requests\User\UserUpdateRequest;
 use App\Http\Resources\User\UserResource;
 use App\Http\Resources\User\UserTrashResource;
+use App\Models\Service;
 use App\Models\User;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -86,7 +87,9 @@ class UserController extends Controller
     public function create(): View|Factory|Application
     {
         Gate::authorize('granted', 'ROLE_USERS_CREATE');
-        return view($this->basePath . __FUNCTION__);
+        return view($this->basePath . __FUNCTION__,[
+            "services"=>Service::query()->get()
+        ]);
     }
 
 
@@ -118,7 +121,7 @@ class UserController extends Controller
             Gate::authorize('granted', 'ROLE_USERS_SHOW');
         }
         return view($this->basePath . __FUNCTION__, [
-            'user' => $user
+            'user' => $user->load('service')
         ]);
     }
 
@@ -134,7 +137,8 @@ class UserController extends Controller
             Gate::authorize('granted', 'ROLE_USERS_EDIT');
         }
         return view($this->basePath . __FUNCTION__, [
-            'user' => $user
+            'user' => $user,
+            "services"=>Service::query()->get()
         ]);
     }
 

@@ -233,13 +233,13 @@ class LetterController extends Controller
                 "name" => "Destinataire"
             ],
             [
+                "name" => "Référence"
+            ],
+            [
                 "name" => "Objet"
             ],
             [
-                "name" => "Status"
-            ],
-            [
-                "name" => "Transférer"
+                "name" => "Statut"
             ],
             [
                 "name" => "Date"

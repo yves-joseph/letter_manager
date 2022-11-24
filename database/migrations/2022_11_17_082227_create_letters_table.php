@@ -14,6 +14,8 @@ return new class extends Migration {
     {
         Schema::create('letters', function (Blueprint $table) {
             $table->id();
+            $table->string('ref')
+                ->nullable();
             $table->unsignedBigInteger('user_id');
             $table->enum('type', ['receive', 'send'])->default('receive');
             $table->mediumText('subject');

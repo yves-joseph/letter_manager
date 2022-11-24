@@ -29,7 +29,8 @@ class LetterStoreRequest extends FormRequest
         return [
             "user_id" => ['required', 'integer'],
             "type" => ['required', 'max:255'],
-            "subject" => ['required', 'string', Rule::unique('letters')],
+            "subject" => ['required', 'string'],
+            "ref" => ['required', 'string', Rule::unique('letters')],
             "sender_full_name" => ['required', 'max:255'],
             "recipient_full_name" => ['required', 'max:255'],
             "receive_at" => ['required'],

@@ -52,11 +52,11 @@
                         </div>
                         <p>
                             vous avez {{ \App\Models\Letter::query()->count() }} lettre(s) dans votre base de données.
-                            cliquez sur le bouton ci-dessous pour voir tous les lettres (Envoyer ou réceptionner)
+                            cliquez sur le bouton ci-dessous pour voir toutes les lettres (Envoyer ou réceptionner)
                         </p>
                         <x-a
                             svg="mark_email_unread"
-                            :label="strtoupper('Tous les lettres')"
+                            :label="strtoupper('Toutes les lettres')"
                             type="primary"
                             :href="route('letters.index')"></x-a>
                     </div>

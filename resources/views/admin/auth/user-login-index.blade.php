@@ -17,7 +17,7 @@
             <h3>{{ config('app.name') }}</h3>
 
             <p>
-               Logiciel de gestion intégrer des lettres manuscrites
+               Logiciel de Gestion de Courriers
             </p>
         </div>
     </div>
@@ -31,7 +31,7 @@
                     </label>
                     <input
                         type="text"
-                        value="{{ old('username') ?? 'yjk@outlook.fr' }}"
+                        value="{{ old('username') }}"
                         name="email"
                         id="username"
                         class="kh-input-field"
@@ -48,7 +48,6 @@
                         type="password"
                         name="password"
                         id="password"
-                        value="password"
                         required
                         autofocus>
                     <button

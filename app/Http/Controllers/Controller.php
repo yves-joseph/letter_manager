@@ -18,7 +18,7 @@ class Controller extends BaseController
 
     public function redirectStore(Request $request, $name): RedirectResponse
     {
-        if ($request->filled('continue') && $request->input('continue') === 's')
+        if ($request->filled('_btn') && $request->input('_btn') === 'n')
             return redirect()->route("$name.index");
         else
             return redirect()->back();

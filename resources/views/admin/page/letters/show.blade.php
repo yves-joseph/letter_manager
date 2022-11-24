@@ -17,9 +17,16 @@
                     svg="delete"></x-destroy>
             @endif
         </x-slot:header>
+        <div class="row">
+            <div class="col-12 col-md-5">
+                <x-text
+                    label="Référence du courrier"
+                    :content="$letter->ref"></x-text>
+            </div>
 
+        </div>
         @if(\Illuminate\Support\Facades\Gate::allows('granted', 'ROLE_LETTERS_SUPERVISOR'))
-            <x-text label="Lettre Transférée à:">
+            <x-text label="Courrier Transféré à:">
                 @if(!$letter->users->isEmpty())
                     <ol style="display: flex;list-style: none;">
                         @foreach($letter->users as $user)
@@ -34,10 +41,11 @@
                         @endforeach
                     </ol>
                 @else
-                    Cette lettre n'a pas encore été transférée
+                    Ce Courrier n'a pas encore été transféré
                 @endif
             </x-text>
         @endif
+
         <div class="row">
             <div class="col-12 col-md-5">
                 <x-text
@@ -59,7 +67,7 @@
         <div class="row">
             <div class="col-12">
                 <x-text
-                    label="Objet de la lettre"
+                    label="Objet du courrier"
                     :content="$letter->subject"></x-text>
             </div>
         </div>
@@ -67,7 +75,7 @@
         <div class="row">
             <div class="col-12">
                 <x-text
-                    label="Contenu de la lettre">
+                    label="Contenu du courrier">
                     <iframe src="{{ $letter->file_path }}"
                             frameborder="0"
                             style="width: 100%;height: 70vh;max-height: 664px"></iframe>
@@ -110,7 +118,7 @@
 @endsection
 
 @section('title')
-    N°{{ $letter->id }} | Informations
+    {{ $letter->ref }} | Informations
 @endsection
 @section('navigate')
     <x-navigate-bar>
@@ -119,7 +127,7 @@
             label="Lettres"></x-navigate-bar-link>
         <x-navigate-bar-link
             :url="\Illuminate\Support\Facades\URL::current()"
-            :label="'N°'.$letter->id"></x-navigate-bar-link>
+            :label="$letter->ref"></x-navigate-bar-link>
         <x-navigate-bar-link
             :url="\Illuminate\Support\Facades\URL::current()"
             label="Informations"></x-navigate-bar-link>

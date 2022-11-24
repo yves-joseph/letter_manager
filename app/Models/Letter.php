@@ -25,7 +25,8 @@ class Letter extends Model
         "recipient_full_name",
         "receive_at",
         "file_path",
-        "detail"
+        "detail",
+        "ref"
     ];
 
     public function setFilePathAttribute($filePath)

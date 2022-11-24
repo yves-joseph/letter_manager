@@ -35,7 +35,8 @@ class UserStoreRequest extends FormRequest
             'password' => ['required', 'string', 'confirmed', Rules\Password::defaults()],
             'role' => ['required', 'array'],
             'activated' => ['required', 'boolean'],
-            'image_path' => ['nullable','image']
+            'image_path' => ['nullable','image'],
+            'service_id' => ['required','integer']
         ];
     }
 

@@ -6,6 +6,14 @@
             $_type = Request::query('type',"receive")
         @endphp
         <div class="row">
+            <div class="col-12 col-md-6 col-lg-8">
+                <x-input
+                    label="Référence du courrier"
+                    placeholder="Saisir la référence du courrier"
+                    name="ref"
+                    :required="true"
+                    :value="old('ref')?? $letter->ref"></x-input>
+            </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <x-input
                     :label="$_type=='send' ? 'Date d\'envoi de la lettre':'Date de réception de la lettre'"
@@ -107,7 +115,7 @@
 @endsection
 
 @section('title')
-    N°{{ $letter->id }} | Edition
+    {{ $letter->ref }} | Edition
 @endsection
 @section('navigate')
     <x-navigate-bar>
@@ -116,7 +124,7 @@
             label="Lettres"></x-navigate-bar-link>
         <x-navigate-bar-link
             :url="\Illuminate\Support\Facades\URL::current()"
-            :label="'N°'.$letter->id"></x-navigate-bar-link>
+            :label="$letter->ref"></x-navigate-bar-link>
         <x-navigate-bar-link
             :url="\Illuminate\Support\Facades\URL::current()"
             label="Edition"></x-navigate-bar-link>
